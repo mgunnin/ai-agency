@@ -1,9 +1,9 @@
-import Ubuntu from "../components/ubuntu";
-import ReactGA from 'react-ga';
-import Meta from "../components/SEO/Meta";
+import ReactGA from "react-ga"
+import Meta from "../components/seo/Meta"
+import Ubuntu from "../components/ubuntu"
 
-const TRACKING_ID = process.env.NEXT_PUBLIC_TRACKING_ID;
-ReactGA.initialize(TRACKING_ID);
+const TRACKING_ID = process.env.NEXT_PUBLIC_TRACKING_ID
+ReactGA.initialize(TRACKING_ID)
 
 function App() {
   return (
@@ -14,4 +14,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
