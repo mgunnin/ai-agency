@@ -14,7 +14,7 @@ export class Desktop extends Component {
   constructor() {
     super()
     this.app_stack = []
-    this.initFavourite = {}
+    this.initFavorite = {}
     this.allWindowClosed = false
     this.state = {
       focused_windows: {},
@@ -22,7 +22,7 @@ export class Desktop extends Component {
       allAppsView: false,
       overlapped_windows: {},
       disabled_apps: {},
-      favourite_apps: {},
+      favorite_apps: {},
       hideSideBar: false,
       minimized_windows: {},
       desktop_apps: [],
@@ -61,7 +61,7 @@ export class Desktop extends Component {
           title: folder.name,
           icon: "./themes/Yaru/system/folder.png",
           disabled: true,
-          favourite: false,
+          favorite: false,
           desktop_shortcut: true,
           screen: () => {},
         })
@@ -162,7 +162,7 @@ export class Desktop extends Component {
     let focused_windows = {},
       closed_windows = {},
       disabled_apps = {},
-      favourite_apps = {},
+      favorite_apps = {},
       overlapped_windows = {},
       minimized_windows = {}
     let desktop_apps = []
@@ -179,9 +179,9 @@ export class Desktop extends Component {
         ...disabled_apps,
         [app.id]: app.disabled,
       }
-      favourite_apps = {
-        ...favourite_apps,
-        [app.id]: app.favourite,
+      favorite_apps = {
+        ...favorite_apps,
+        [app.id]: app.favorite,
       }
       overlapped_windows = {
         ...overlapped_windows,
@@ -197,18 +197,18 @@ export class Desktop extends Component {
       focused_windows,
       closed_windows,
       disabled_apps,
-      favourite_apps,
+      favorite_apps,
       overlapped_windows,
       minimized_windows,
       desktop_apps,
     })
-    this.initFavourite = { ...favourite_apps }
+    this.initFavorite = { ...favorite_apps }
   }
 
   updateAppsData = () => {
     let focused_windows = {},
       closed_windows = {},
-      favourite_apps = {},
+      favorite_apps = {},
       minimized_windows = {},
       disabled_apps = {}
     let desktop_apps = []
@@ -241,9 +241,9 @@ export class Desktop extends Component {
             ? this.state.closed_windows[app.id]
             : true,
       }
-      favourite_apps = {
-        ...favourite_apps,
-        [app.id]: app.favourite,
+      favorite_apps = {
+        ...favorite_apps,
+        [app.id]: app.favorite,
       }
       if (app.desktop_shortcut) desktop_apps.push(app.id)
     })
@@ -252,10 +252,10 @@ export class Desktop extends Component {
       closed_windows,
       disabled_apps,
       minimized_windows,
-      favourite_apps,
+      favorite_apps,
       desktop_apps,
     })
-    this.initFavourite = { ...favourite_apps }
+    this.initFavorite = { ...favorite_apps }
   }
 
   renderDesktopApps = () => {
@@ -398,7 +398,7 @@ export class Desktop extends Component {
     if (this.app_stack.includes(objId)) this.focus(objId)
     else {
       let closed_windows = this.state.closed_windows
-      let favourite_apps = this.state.favourite_apps
+      let favorite_apps = this.state.favorite_apps
       var frequentApps = localStorage.getItem("frequentApps")
         ? JSON.parse(localStorage.getItem("frequentApps"))
         : []
@@ -426,10 +426,10 @@ export class Desktop extends Component {
       localStorage.setItem("frequentApps", JSON.stringify(frequentApps))
 
       setTimeout(() => {
-        favourite_apps[objId] = true // adds opened app to sideBar
+        favorite_apps[objId] = true // adds opened app to sideBar
         closed_windows[objId] = false // openes app's window
         this.setState(
-          { closed_windows, favourite_apps, allAppsView: false },
+          { closed_windows, favorite_apps, allAppsView: false },
           this.focus(objId)
         )
         this.app_stack.push(objId)
@@ -447,12 +447,12 @@ export class Desktop extends Component {
 
     // close window
     let closed_windows = this.state.closed_windows
-    let favourite_apps = this.state.favourite_apps
+    let favorite_apps = this.state.favorite_apps
 
-    if (this.initFavourite[objId] === false) favourite_apps[objId] = false // if user default app is not favourite, remove from sidebar
+    if (this.initFavorite[objId] === false) favorite_apps[objId] = false // if user default app is not favorite, remove from sidebar
     closed_windows[objId] = true // closes the app's window
 
-    this.setState({ closed_windows, favourite_apps })
+    this.setState({ closed_windows, favorite_apps })
   }
 
   focus = (objId) => {
@@ -482,7 +482,7 @@ export class Desktop extends Component {
       title: folder_name,
       icon: "./themes/Yaru/system/folder.png",
       disabled: true,
-      favourite: false,
+      favorite: false,
       desktop_shortcut: true,
       screen: () => {},
     })
@@ -562,7 +562,7 @@ export class Desktop extends Component {
           apps={apps}
           hide={this.state.hideSideBar}
           hideSideBar={this.hideSideBar}
-          favourite_apps={this.state.favourite_apps}
+          favorite_apps={this.state.favorite_apps}
           showAllApps={this.showAllApps}
           allAppsView={this.state.allAppsView}
           closed_windows={this.state.closed_windows}

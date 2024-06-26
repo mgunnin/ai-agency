@@ -14,8 +14,7 @@ export class AboutUs extends Component {
 
   componentDidMount() {
     this.screens = {
-      about: <About />,
-      education: <Education />,
+      about: <AboutVerticalLabs />,
       history: <History />,
       projects: <Projects />,
       skills: <Skills />,
@@ -31,8 +30,13 @@ export class AboutUs extends Component {
     this.changeScreen(document.getElementById(lastVisitedScreen))
   }
 
-  changeScreen = (e) => {
-    const screen = e.id || e.target.id
+  changeScreen = (screenId) => {
+    const screen =
+      typeof screenId === "string"
+        ? screenId
+        : screenId && screenId.target
+        ? screenId.target.id
+        : "about"
 
     // store this state
     localStorage.setItem("about-section", screen)
@@ -66,17 +70,17 @@ export class AboutUs extends Component {
         >
           <img
             className=" w-3 md:w-4"
-            alt="aiden vivek"
+            alt="about us"
             src="./themes/Yaru/status/about.svg"
           />
-          <span className=" ml-1 md:ml-2 text-gray-50 ">About Me</span>
+          <span className=" ml-1 md:ml-2 text-gray-50 ">About Us</span>
         </div>
         <div
-          id="education"
+          id="faq"
           tabIndex="0"
           onFocus={this.changeScreen}
           className={
-            (this.state.active_screen === "education"
+            (this.state.active_screen === "faq"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
             " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
@@ -84,10 +88,10 @@ export class AboutUs extends Component {
         >
           <img
             className=" w-3 md:w-4"
-            alt="aiden' education"
-            src="./themes/Yaru/status/education.svg"
+            alt="tools"
+            src="./themes/Yaru/status/faq.svg"
           />
-          <span className=" ml-1 md:ml-2 text-gray-50 ">Education</span>
+          <span className=" ml-1 md:ml-2 text-gray-50 ">FAQ</span>
         </div>
         <div
           id="history"
@@ -102,7 +106,7 @@ export class AboutUs extends Component {
         >
           <img
             className=" w-3 md:w-4"
-            alt="aiden' history"
+            alt="history"
             src="./themes/Yaru/status/work-history.svg"
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Experience</span>
@@ -120,7 +124,7 @@ export class AboutUs extends Component {
         >
           <img
             className=" w-3 md:w-4"
-            alt="vivek' projects"
+            alt="projects"
             src="./themes/Yaru/status/projects.svg"
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
@@ -202,351 +206,185 @@ export class AboutUs extends Component {
 
 export default AboutUs
 
-export const displayAboutAiden = () => {
+export const displayAboutVerticalLabs = () => {
   return <AboutUs />
 }
 
-function About() {
+function AboutVerticalLabs() {
   return (
     <>
       <div className="w-20 md:w-32 mt-4 bg-white rounded-full">
         <img
           className="w-full rounded-full"
-          src="./images/logos/aidenmori.png"
-          alt="Aiden Mori Logo"
+          src="./images/logos/vertical_labs.png"
+          alt="Vertical Labs Logo"
         />
       </div>
-      <div className=" mt-2 text-lg md:text-2xl text-center px-1">
+      <div className="mt-4 text-lg md:text-2xl text-center px-1">
         <div>
-          My name is <span className="font-bold">Aiden Mori</span> ,
+          Welcome to <span className="font-bold">Vertical AI</span>
         </div>
         <div className="font-normal ml-1">
-          I'm a{" "}
-          <span className="text-pink-600 font-bold">
-            Full Stack and Blockchain Developer!
-          </span>
+          Your partner in{" "}
+          <span className="text-pink-600 font-bold">AI-driven innovation</span>
         </div>
       </div>
-      <div className=" mt-4 relative md:my-4 pt-px bg-white w-32 md:w-48">
+      <div className="mt-4 relative md:my-4 pt-px bg-white w-32 md:w-48">
         <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-0"></div>
         <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
       </div>
-      <ul className=" my-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-        <li className=" list-pc my-2 md:text-base">
-          Detail oriented professional with over 8 years of experience in{" "}
-          <span className="font-bold">Web2</span> and{" "}
-          <span className="font-bold">Web3</span> industries.
+      <ul className="mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
+        <li className="list-pc my-2 md:text-base">
+          Specializing in cutting-edge AI solutions for businesses of all sizes
         </li>
-        <li className=" list-pc my-2 md:text-base">
-          Experience in <span className="font-bold">Leading a Team</span> of
-          front end, back end and smart contract developers at{" "}
-          <span className="font-bold">KURONURI</span> project.
+        <li className="list-pc my-2 md:text-base">
+          Expertise in machine learning, natural language processing, and
+          computer vision
         </li>
-        <li className=" list-pc my-2 md:text-base">
-          Developed <span className="font-bold">a comprehensive DeFi</span>,{" "}
-          <span className="font-bold">NFT marketplaces</span>,{" "}
-          <span className="font-bold">Tokens</span> and 20+{" "}
-          <span className="font-bold">Web3</span> projects including{" "}
-          <span className="font-bold">P2E games</span> on Ethereum, Polygon,
-          Binance Smart Chain and so on.
+        <li className="list-pc my-2 md:text-base">
+          Custom AI development tailored to your specific needs and challenges
         </li>
-        <li className=" list-pc my-2 md:text-base">
-          Advanced knowledge of multiple programming languages, frameworks and
-          several database structures.
+        <li className="list-pc my-2 md:text-base">
+          AI consulting to help you leverage the power of artificial
+          intelligence
         </li>
-        <li className=" list-pc my-2 md:text-base">
-          Reliable team player offering exceptional analytical and time
-          management skills and the important ability to think critically and
-          solve complex problems.
+        <li className="list-pc my-2 md:text-base">
+          Committed to ethical AI practices and responsible innovation
         </li>
       </ul>
     </>
   )
 }
+
 function History() {
   const project_list = [
     {
       name: (
         <p>
-          Back End Engineer,{" "}
+          AI Solutions Architect,{" "}
           <a className="border-b-2" href="#" target="_blank" rel="noreferrer">
-            Dwayne Casino Platform
+            Global Tech Innovations
           </a>
         </p>
       ),
-      date: "Feb 2024 - June 2024, Remote",
+      date: "Jan 2023 - Present, Remote",
       link: "#",
       description: [
         <p>
-          Engineered the backend using Node.js, TypeScript, Express.js, and
-          MongoDB, establishing a scalable and efficient infrastructure capable
-          of handling millions of transactions per day, and implemented
-          real-time chat and game functionalities using the Socket.io module.
+          Led the development of a cutting-edge predictive maintenance system
+          for a Fortune 500 manufacturing client, leveraging advanced machine
+          learning algorithms and IoT sensor data to reduce unplanned downtime
+          by 35% and save an estimated $10 million annually.
         </p>,
         <p>
-          Integrated third-party payment APIs to ensure secure token deposits
-          and withdrawals, while also utilizing AI services to enhance security
-          and user experience by filtering user images.
+          Designed and implemented a natural language processing pipeline for a
+          multinational e-commerce platform, enabling multilingual customer
+          support automation that improved response times by 60% and increased
+          customer satisfaction scores by 25%.
         </p>,
         <p>
-          Designed and implemented robust user authentication mechanisms,
-          including CAPTCHA, JWT tokens, and session management, while
-          synchronizing sessions with Socket.io to maintain consistent and
-          accurate user information across both the game and website platforms.
+          Spearheaded the creation of a computer vision-based quality control
+          system for a pharmaceutical company, resulting in a 99.9% defect
+          detection rate and a 40% reduction in manual inspection costs.
         </p>,
         <p>
-          Developed comprehensive affiliate page functionalities and an
-          efficient ticketing system for user support, alongside creating
-          advanced admin features and analytics tools to facilitate data-driven
-          decision-making and operational efficiency.
+          Collaborated with cross-functional teams to develop an AI-driven
+          personalized recommendation engine for a streaming service, increasing
+          user engagement by 45% and subscription retention rates by 20%.
         </p>,
         <p>
-          Employed Docker for containerization and Git for version control,
-          collaborating effectively with frontend developers and game developers
-          to ensure cohesive, timely project delivery, while optimizing database
-          queries and improving system performance, reducing server response
-          times by 30%.
+          Implemented robust MLOps practices, including automated model
+          training, versioning, and deployment pipelines, reducing
+          time-to-production for AI models by 50% and ensuring consistent
+          performance across multiple client projects.
         </p>,
       ],
     },
     {
       name: (
         <p>
-          Back End | Smart Contract Engineer,{" "}
+          Machine Learning Engineer,{" "}
           <a
             className="border-b-2"
-            href="https://decentreviews.co"
+            href="https://aiinnovate.co"
             target="_blank"
             rel="noreferrer"
           >
-            Decent Reviews
+            AI Innovate
           </a>
         </p>
       ),
-      date: "May 2023 - Nov 2023, Remote",
-      link: "https://decentreviews.co",
-      description: [
-        <p>
-          Worked as a back-end and smart contract developer in an agile team
-          communicating directly with the CTO.
-        </p>,
-        <p>
-          Created the user review API, automatic review aggregation engine and
-          embeddable badge generation engine using node.js/typescript and
-          express.js.
-        </p>,
-        <p>
-          Used mongoDB aggregation pipeline for review aggregation engine, and
-          integrated with smart contract using web3.js to store the aggregation
-          results.
-        </p>,
-        <p>
-          Implemented CI/CD pipeline to automate comprehensive project testing
-          and efficient deployment processes using github workflow actions.
-        </p>,
-        <p>
-          Successfully conducted thorough API testing leveraging the Cypress and
-          Jest testing libraries, while simultaneously generating API document
-          via the Swagger API framework.
-        </p>,
-        <p>
-          Effectively leveraged Docker to efficiently package, deploy, and
-          manage applications across diverse environments, guaranteeing
-          consistency and portability.
-        </p>,
-      ],
-    },
-    {
-      name: (
-        <p>
-          Blockchain, Full Stack Developer,{" "}
-          <a
-            className="border-b-2"
-            href="https://kuronuri.com/pro"
-            target="_blank"
-            rel="noreferrer"
-          >
-            KURONURI
-          </a>
-        </p>
-      ),
-      date: "Apr 2021 - Aug 2023, Remote",
-      link: "https://kuronuri.com/pro",
-      description: [
-        <p>
-          Accomplished in building a comprehensive DeFi ecosystem, Token
-          Generation and ICO platforms, 5 play-to-earn games, 2 NFT marketplaces
-          including over 20 Web3 projects and tools.
-        </p>,
-        <p>
-          Developed an automated DEX bot for Burn&Drop and a CEX bot for trading
-          integrated with the Bitcastle CEX platform.
-        </p>,
-        <p>
-          Designed and developed robust token Bridges for frictionless asset
-          transfers between blockchain networks and implemented Cross-Chain
-          solutions.
-        </p>,
-        <p>
-          Leveraged Web3.js and Ethers.js to establish seamless interaction
-          between the React.js, Vue.js front-end and smart contract.
-        </p>,
-        <p>
-          Managed the CI / CD solution for a development team using the CircleCI
-          tool, Bitbucket, Github and AWS Lambda functions.
-        </p>,
-        <p>
-          Utilized GraphQL API to enhance communication performance between the
-          front-end and back-end.
-        </p>,
-        <p>
-          Constructed and integrated an internal back-end synchronized with the
-          blockchain database, utilizing Node.js and Express.js.
-        </p>,
-      ],
-    },
-    {
-      name: (
-        <p>
-          Blockchain Developer,{" "}
-          <a className="border-b-2" href="#" target="_blank" rel="noreferrer">
-            Defichain Value
-          </a>
-        </p>
-      ),
-      date: "Feb 2020 - Mar 2021, Remote",
+      date: "Jun 2020 - Dec 2022, Remote",
       link: "#",
       description: [
-        <p>Created the BSC Swap and Farm Contract</p>,
         <p>
-          Developed the smart contracts to interact with Value DeFi protocol
-          including liquidity pools, yield farming strategies and governance
-          mechanisms.
+          Developed and deployed a real-time fraud detection system for a
+          fintech startup, utilizing ensemble learning techniques and achieving
+          a 92% fraud detection rate with a false positive rate under 0.1%.
         </p>,
         <p>
-          Tested the smart contracts using Truffle and Hardhat framework and
-          deployed successfully on Binance Smart Chain.
+          Created an AI-powered resume screening and candidate ranking system
+          for a human resources software company, reducing time-to-hire by 40%
+          and improving the quality of candidate shortlists.
         </p>,
         <p>
-          Integrated the smart contracts with front-end using Ethers.js and
-          Web3.js to enable users interact with liquidity pools, stake assets
-          and participate in yield farming opportunities.
-        </p>,
-      ],
-    },
-    {
-      name: (
-        <p>
-          Full Stack Developer,{" "}
-          <a
-            className="border-b-2"
-            href="https://incarta.com.au/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            INCARTA
-          </a>
-        </p>
-      ),
-      date: "May 2019 - Feb 2020, Australia",
-      link: "https://incarta.com.au/",
-      description: [
-        <p>
-          Improved patient treatment rates by 20% through the developing and
-          implementing of machine learning algorithms.
+          Implemented a deep learning-based image recognition system for a
+          retail client, enabling automated inventory management and reducing
+          stockouts by 30%.
         </p>,
         <p>
-          Instrumental in designing and developing clinical charts using
-          React.js and D3.js, contributed to patient care during the COVID-19
-          pandemic.
+          Collaborated with data scientists and software engineers to build and
+          maintain scalable machine learning infrastructure using cloud
+          technologies (AWS, GCP) and containerization (Docker, Kubernetes).
         </p>,
         <p>
-          Developed and delivered multiple healthcare platforms using React.js,
-          Angular, Vue.js, with Laravel, PHP framework and Node.js focusing on
-          clear client communication.
-        </p>,
-        <p>
-          By using react.js, next.js and node.js, created reusable components
-          and made functions modular to connect with the backend, which has led
-          to a 15% improvement in site speed and performance.
+          Conducted regular knowledge-sharing sessions and mentored junior team
+          members, contributing to a 25% increase in team productivity and
+          fostering a culture of continuous learning and innovation.
         </p>,
       ],
     },
     {
       name: (
         <p>
-          Front End Developer,{" "}
+          Data Scientist,{" "}
           <a
             className="border-b-2"
-            href="https://www.openagent.com.au/"
+            href="https://techdatainsights.com/"
             target="_blank"
             rel="noreferrer"
           >
-            OpenAgent
+            Tech Data Insights
           </a>
         </p>
       ),
-      date: "Aug 2017 - Apr 2019, Australia",
-      link: "https://www.openagent.com.au/",
+      date: "Sep 2018 - May 2020, San Francisco",
+      link: "#",
       description: [
         <p>
-          In an Agile, collaborative environment, effectively gathered design
-          requirements, and conducted thorough application testing, resulting in
-          a notable 25% increase in working speed. • Leading troubleshooting
-          efforts, fixed more than 300+ bugs and other issues, and updated sites
-          throughout the production lifecycle.
+          Developed predictive models for customer churn and lifetime value,
+          enabling targeted retention strategies that reduced churn by 15% for a
+          major telecommunications client.
         </p>,
         <p>
-          Improved the website's user interface and optimized its speed,
-          resulting in a 35% speed improvement and a 20% increase in user
-          engagement.
+          Designed and implemented an A/B testing framework for a SaaS platform,
+          allowing for rapid experimentation and data-driven decision making,
+          resulting in a 22% increase in user conversion rates.
         </p>,
         <p>
-          Collaborated with the data science team to develop algorithms that
-          matched over 80% of our platform's users with top-performing agents,
-          as a result, 25% increase in customer satisfaction.
+          Created interactive data visualizations and dashboards using Tableau
+          and D3.js, improving stakeholder understanding of complex datasets and
+          facilitating more informed business decisions.
         </p>,
         <p>
-          Be proud of contributing to this project and look forward to applying
-          my knowledge and experience in my future career endeavors.
-        </p>,
-      ],
-    },
-    {
-      name: (
-        <p>
-          Junior Front End Developer,{" "}
-          <a
-            className="border-b-2"
-            href="https://legrand.jp/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Le Grand Co, Ltd.
-          </a>
-        </p>
-      ),
-      date: "Apr 2015 - Nov 2016, Japan",
-      link: "https://legrand.jp/",
-      description: [
-        <p>
-          Worked in an Agile, collaborative environment to receive design
-          requirements, peer program, and test applications
+          Conducted in-depth statistical analyses and hypothesis testing to
+          validate business assumptions and uncover actionable insights,
+          directly contributing to a 10% increase in revenue for key accounts.
         </p>,
         <p>
-          Maintained and updated 20+ web pages, graphics, and online marketing
-          materials in collaboration with the UX manager and development team.
-        </p>,
-        <p>
-          Leading troubleshooting efforts, fixing more than 1,000 bugs and other
-          issues, and updated sites throughout the production lifecycle.
-        </p>,
-        <p>
-          Created the complex UI components using react/typescript and scss.
-        </p>,
-        <p>
-          Improved the process of storing app state info by implementing the
-          Redux store, and successfully integrated the front-end with Rest APIs.
+          Collaborated with the engineering team to improve data pipeline
+          efficiency, reducing data processing time by 40% and enabling near
+          real-time analytics for critical business metrics.
         </p>,
       ],
     },
@@ -591,56 +429,12 @@ function History() {
     </>
   )
 }
-function Education() {
-  return (
-    <>
-      <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-        Education
-        <div className="absolute pt-px bg-white mt-px top-full w-full">
-          <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
-          <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
-        </div>
-      </div>
-      <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
-        <li className="list-disc">
-          <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-            Computer Engineering, Victoria University
-          </div>
-          <div className=" text-sm text-gray-400 mt-0.5">2012 - 2015</div>
-          <div className=" text-sm md:text-base">Bachelor of Engineering</div>
-        </li>
-      </ul>
-      <div className=" font-medium relative text-2xl mt-4 md:mt-4 mb-4">
-        Certificate
-        <div className="absolute pt-px bg-white mt-px top-full w-full">
-          <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
-          <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
-        </div>
-      </div>
-      <div className="flex w-full flex-col px-20">
-        <div className="w-full flex flex-col lg:flex-row gap-2 py-3 px-3 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 ">
-          <a
-            className="w-full cursor-pointer"
-            target="_blank"
-            href="https://www.hackerrank.com/certificates/f367d0b2f01b"
-            rel="noreferrer"
-          >
-            <img
-              src="./images/certificate/css_cert.webp"
-              className="rounded"
-              alt="CSS Certificate"
-            />
-          </a>
-        </div>
-      </div>
-    </>
-  )
-}
+
 function Skills() {
   return (
     <>
       <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-        Technical Skills
+        Our Expertise
         <div className="absolute pt-px bg-white mt-px top-full w-full">
           <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
           <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
@@ -648,28 +442,28 @@ function Skills() {
       </div>
       <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
         <li className=" list-finger text-sm md:text-base mt-4 leading-tight tracking-tight">
-          I am working as a full stack developer.
+          Our team consists of seasoned entrepreneurs and AI experts.
         </li>
         <li className=" list-finger text-sm md:text-base mt-4 leading-tight tracking-tight">
           <div>
             {" "}
-            My areas of expertise are{" "}
+            Our core competencies are in{" "}
             <strong className="text-ubt-gedit-orange">
-              React.js, Web3.js and Smart Contract
+              AI Development, Machine Learning, and Data Science
             </strong>{" "}
-            development
+            across various industries
           </div>
         </li>
         <li className=" list-finger text-sm md:text-base mt-4 leading-tight tracking-tight">
-          <div>Here are my most frequently used</div>
+          <div>Here are our key areas of expertise:</div>
         </li>
       </ul>
       <div className="w-full md:w-10/12 flex mt-4">
         <div className=" text-sm text-center md:text-base w-1/2 font-bold">
-          Languages & Tools
+          AI & Technical Skills
         </div>
         <div className=" text-sm text-center md:text-base w-1/2 font-bold">
-          Frameworks & Libraries
+          Business & Industry Expertise
         </div>
       </div>
       <div className="w-full md:w-10/12 flex justify-center items-start font-bold text-center">
@@ -677,47 +471,52 @@ function Skills() {
           <div className="flex flex-wrap justify-center items-start w-full mt-2">
             <img
               className="m-1"
-              src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A"
-              alt="aiden javascript"
+              src="https://img.shields.io/badge/-Machine%20Learning-01D277?style=flat&logo=sklearn&logoColor=ffffff"
+              alt="vertical ai machine learning"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Typescript-3178c6?style=flat&logo=typescript&logoColor=ffffff"
-              alt="aiden typescript"
+              src="https://img.shields.io/badge/-Deep%20Learning-FF6F00?style=flat&logo=tensorflow&logoColor=ffffff"
+              alt="vertical ai deep learning"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/-Solidity-ffffff?style=flat&logo=solidity&logoColor=000000&labelColor=%000000"
-              alt="aiden solidity"
+              src="https://img.shields.io/badge/-Natural%20Language%20Processing-4285F4?style=flat&logo=googlecloud&logoColor=ffffff"
+              alt="vertical ai nlp"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=c%2B%2B&logoColor=white"
-              alt="aiden c++"
+              src="https://img.shields.io/badge/-Computer%20Vision-5C3EE8?style=flat&logo=opencv&logoColor=ffffff"
+              alt="vertical ai computer vision"
             />
             <img
               className="m-1"
-              src="http://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff"
-              alt="aiden python"
+              src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff"
+              alt="vertical ai python"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white"
-              alt="aiden dart"
+              src="https://img.shields.io/badge/-R-276DC3?style=flat&logo=r&logoColor=ffffff"
+              alt="vertical ai r"
             />
             <img
-              src="https://img.shields.io/badge/-Sass-%23CC6699?style=flat&logo=sass&logoColor=ffffff"
-              alt="aiden SASS"
+              src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=ffffff"
+              alt="vertical ai tensorflow"
               className="m-1"
             />
             <img
-              src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff"
-              alt="aiden git"
+              src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=ffffff"
+              alt="vertical ai pytorch"
               className="m-1"
             />
             <img
-              src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=ffffff"
-              alt="aiden firebase"
+              src="https://img.shields.io/badge/-Scikit%20Learn-F7931E?style=flat&logo=scikit-learn&logoColor=ffffff"
+              alt="vertical ai scikit learn"
+              className="m-1"
+            />
+            <img
+              src="https://img.shields.io/badge/-Big%20Data-E03E2D?style=flat&logo=apache&logoColor=ffffff"
+              alt="vertical ai big data"
               className="m-1"
             />
           </div>
@@ -726,83 +525,78 @@ function Skills() {
           <div className="flex flex-wrap justify-center items-start w-full mt-2">
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=ffffff"
-              alt="aiden next"
+              src="https://img.shields.io/badge/-Business%20Strategy-0A66C2?style=flat&logo=linkedin&logoColor=ffffff"
+              alt="vertical ai business strategy"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff"
-              alt="aiden react"
+              src="https://img.shields.io/badge/-Product%20Management-000000?style=flat&logo=producthunt&logoColor=ffffff"
+              alt="vertical ai product management"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Angular-dd0031?style=flat&logo=angular&logoColor=ffffff"
-              alt="aiden angular"
+              src="https://img.shields.io/badge/-Digital%20Marketing-4285F4?style=flat&logo=google-ads&logoColor=ffffff"
+              alt="vertical ai digital marketing"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Svelte-ff3e00?style=flat&logo=svelte&logoColor=ffffff"
-              alt="aiden svelte"
+              src="https://img.shields.io/badge/-SEO-47A248?style=flat&logo=google&logoColor=ffffff"
+              alt="vertical ai seo"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Remix-00ccbb?style=flat&logo=remix&logoColor=000000"
-              alt="aiden remix"
+              src="https://img.shields.io/badge/-Content%20Strategy-7719AA?style=flat&logo=microsoft-onenote&logoColor=ffffff"
+              alt="vertical ai content strategy"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Web3JS-f16822?style=flat&logo=Web3.js&logoColor=ffffff"
-              alt="aiden web3"
+              src="https://img.shields.io/badge/-UI%2FUX%20Design-FF61F6?style=flat&logo=figma&logoColor=ffffff"
+              alt="vertical ai ui/ux design"
             />
             <img
               className=" m-1"
-              src="https://img.shields.io/badge/-Hardhat-c5d11700?style=flat&logo=ethereum&logoColor=ffffff"
-              alt="aiden hardhat"
+              src="https://img.shields.io/badge/-Data%20Analytics-4285F4?style=flat&logo=google-analytics&logoColor=ffffff"
+              alt="vertical ai data analytics"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/React Native-61DAFB?style=flat&logo=react&logoColor=white"
-              alt="aiden react native"
+              src="https://img.shields.io/badge/-Agile%20Methodologies-0052CC?style=flat&logo=jira&logoColor=ffffff"
+              alt="vertical ai agile"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/Ionic-3880ff?style=flat&logo=ionic&logoColor=white"
-              alt="aiden ionic framework"
+              src="https://img.shields.io/badge/-Blockchain-121D33?style=flat&logo=blockchain-dot-com&logoColor=ffffff"
+              alt="vertical ai blockchain"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white"
-              alt="aiden flutter"
+              src="https://img.shields.io/badge/-IoT-003A70?style=flat&logo=amazon-aws&logoColor=ffffff"
+              alt="vertical ai iot"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white"
-              alt="aiden tailwind css"
+              src="https://img.shields.io/badge/-Cloud%20Computing-4285F4?style=flat&logo=google-cloud&logoColor=ffffff"
+              alt="vertical ai cloud computing"
             />
             <img
-              src="https://img.shields.io/badge/-NodeJS-339933?style=flat&logo=Node.js&logoColor=ffffff"
-              alt="aiden node.js"
+              src="https://img.shields.io/badge/-FinTech-00B4E6?style=flat&logo=revolut&logoColor=ffffff"
+              alt="vertical ai fintech"
               className="m-1"
             />
             <img
-              src="https://img.shields.io/badge/-ExpressJS-339933?style=flat&logo=Node.js&logoColor=ffffff"
-              alt="aiden express.js"
+              src="https://img.shields.io/badge/-Healthcare-19A974?style=flat&logo=webmd&logoColor=ffffff"
+              alt="vertical ai healthcare"
               className="m-1"
             />
             <img
-              src="https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white"
-              alt="aiden jquery"
+              src="https://img.shields.io/badge/-E--commerce-FF9900?style=flat&logo=shopify&logoColor=ffffff"
+              alt="vertical ai e-commerce"
               className="m-1"
             />
             <img
               className="m-1"
-              src="https://img.shields.io/badge/Redux-593D88?style=flat&logo=redux&logoColor=white"
-              alt="aiden redux"
-            />
-            <img
-              className="m-1"
-              src="https://img.shields.io/badge/Docker-02569B?style=flat&logo=docker&logoColor=white"
-              alt="aiden docker"
+              src="https://img.shields.io/badge/-Cybersecurity-FFB71B?style=flat&logo=avast&logoColor=ffffff"
+              alt="vertical ai cybersecurity"
             />
           </div>
         </div>
@@ -810,800 +604,115 @@ function Skills() {
     </>
   )
 }
+
 function Projects() {
   const project_list = [
     {
-      name: "Gateway - Email Wallet",
-      date: "Feb 2024 - Mar 2024",
-      link: "https://gateway.difines.io",
-      imgUrl: "./images/projects/gateway.webp",
+      name: "AI-Powered Customer Service Chatbot",
+      date: "Jan 2024 - Mar 2024",
+      link: "https://www.verticalai.com/projects/ai-chatbot",
+      imgUrl: "./images/projects/ai-chatbot.webp",
       description: [
-        <p>Email wallet development</p>,
-        <p>Create shop</p>,
-        <p>Token transfer between emails, user to shop</p>,
+        <p>Developed an advanced NLP-based chatbot</p>,
+        <p>Integrated with client's existing CRM system</p>,
+        <p>Reduced customer service response time by 60%</p>,
+        <p>Implemented multi-language support</p>,
       ],
       domains: [
-        "Web3.js",
-        "Wallet",
+        "Natural Language Processing",
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
         "React.js",
-        "TailwindCSS",
-        "Typescript",
-        "Crypto",
-      ],
-    },
-    {
-      name: "Roppongi Ai",
-      date: "Feb 2024 - Feb 2024",
-      link: "https://roppongi-ai.netlify.app/",
-      imgUrl: "./images/projects/roppongi-ai.webp",
-      description: [
-        <p>AI website development</p>,
-        <p>Wordpress theme</p>,
-        <p>Elementor Pro</p>,
-      ],
-      domains: ["Wordpress", "AI", "Elementor", "HTML", "CSS", "JavaScript"],
-    },
-    {
-      name: "Plinko Lotto Dapp",
-      date: "Jan 2024 - Jan 2024",
-      link: "https://plinko-lotto.netlify.app/",
-      imgUrl: "./images/projects/plinko-lotto.webp",
-      description: [
-        <p>Lotto game development</p>,
-        <p>Blockchain game development</p>,
-        <p>Lotto token integration</p>,
-      ],
-      domains: [
-        "Dapp",
-        "Lotto",
-        "Blockchain",
-        "Solidity",
-        "React.js",
-        "Web3.js",
-      ],
-    },
-    {
-      name: "Roppongi Lotto Dapp",
-      date: "Jan 2024 - Jan 2024",
-      link: "https://lotto-droplocker.netlify.app/",
-      imgUrl: "./images/projects/roppongi-lotto.webp",
-      description: [
-        <p>Lotto game development</p>,
-        <p>Blockchain game development</p>,
-        <p>Lotto token integration</p>,
-      ],
-      domains: [
-        "Dapp",
-        "Lotto",
-        "Blockchain",
-        "Solidity",
-        "React.js",
-        "Web3.js",
-      ],
-    },
-    {
-      name: "Lucky Wheel Lotto Dapp",
-      date: "Feb 2024 - Feb 2024",
-      link: "https://lucky-wheel-lotto.netlify.app/",
-      imgUrl: "./images/projects/lucky-wheel.webp",
-      description: [
-        <p>Lotto game development</p>,
-        <p>Blockchain game development</p>,
-        <p>Lotto token integration</p>,
-      ],
-      domains: [
-        "Dapp",
-        "Lotto",
-        "Blockchain",
-        "Solidity",
-        "React.js",
-        "Web3.js",
-      ],
-    },
-    {
-      name: "Decent Reviews",
-      date: "Mar 2023 - Nov 2023",
-      link: "https://www.linkedin.com/company/decentreviews/about/",
-      imgUrl: "./images/projects/decent-reviews.webp",
-      description: [
-        <p>Worked on backend and smart contract develoment</p>,
-        <p>
-          Created the user review API, automatic review aggregation engine,
-          automatic review logo generation engine
-        </p>,
-        <p>
-          Integrated with smart contract using web3.js and synced with backend
-        </p>,
-        <p>
-          Implemented the backend including database using cypress and jext
-          testing library and finalize the API document using swagger API
-          framework
-        </p>,
-      ],
-      domains: [
         "Node.js",
-        "Express.js",
-        "Blockchain",
-        "Solidity",
+        "API Integration",
+      ],
+    },
+    {
+      name: "Predictive Maintenance System for Manufacturing",
+      date: "Sep 2023 - Dec 2023",
+      link: "https://www.verticalai.com/projects/predictive-maintenance",
+      imgUrl: "./images/projects/predictive-maintenance.webp",
+      description: [
+        <p>Developed IoT-based sensor data collection system</p>,
+        <p>Created machine learning models for failure prediction</p>,
+        <p>Implemented real-time monitoring dashboard</p>,
+        <p>Reduced unplanned downtime by 35%</p>,
+      ],
+      domains: [
+        "IoT",
+        "Machine Learning",
+        "Time Series Analysis",
+        "Python",
+        "TensorFlow",
         "React.js",
-        "Web3.js",
+        "Node.js",
         "MongoDB",
-        "CI/CD",
-        "Github",
       ],
     },
     {
-      name: "AI Play - Video Generator",
-      date: "Dec 2023 - Dec 2023",
-      link: "https://ai-play.netlify.app/",
-      imgUrl: "./images/projects/ai-video-generator.webp",
+      name: "AI-Driven Personalized Learning Platform",
+      date: "May 2023 - Aug 2023",
+      link: "https://www.verticalai.com/projects/personalized-learning",
+      imgUrl: "./images/projects/personalized-learning.webp",
       description: [
-        <p>Used D-ID API for generation video from image</p>,
-        <p>Genrate AI video from image</p>,
-        <p>Upload image</p>,
-        <p>Choose voice, voice style and language</p>,
+        <p>Developed adaptive learning algorithms</p>,
+        <p>Created personalized content recommendation system</p>,
+        <p>Implemented progress tracking and analytics dashboard</p>,
+        <p>Increased student engagement by 40%</p>,
       ],
       domains: [
-        "react.js",
-        "css",
-        "AI",
-        "D-ID",
-        "API integration",
-        "animation",
-        "video",
+        "Machine Learning",
+        "Natural Language Processing",
+        "Python",
+        "Django",
+        "React.js",
+        "PostgreSQL",
+        "AWS",
       ],
     },
     {
-      name: "Speaking Girl AI",
-      date: "Nov 2023 - Nov 2023",
-      link: "https://speakingai.difines.io",
-      imgUrl: "./images/projects/ai-speaking-girl.webp",
+      name: "Computer Vision for Retail Analytics",
+      date: "Feb 2023 - Apr 2023",
+      link: "https://www.verticalai.com/projects/retail-analytics",
+      imgUrl: "./images/projects/retail-analytics.webp",
       description: [
-        <p>Use chatGPT</p>,
-        <p>Use Microsoft Azure for TTS function</p>,
+        <p>Developed object detection and tracking system</p>,
+        <p>Created heat map generation for store layout optimization</p>,
+        <p>Implemented customer behavior analysis</p>,
+        <p>Increased store conversion rate by 25%</p>,
       ],
       domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "AI",
-        "chatGPT",
-        "microsoft",
-        "tts",
+        "Computer Vision",
+        "Deep Learning",
+        "Python",
+        "OpenCV",
+        "TensorFlow",
+        "React.js",
+        "Node.js",
+        "MongoDB",
       ],
     },
     {
-      name: "Staking Platform",
-      date: "Nov 2023 - Dec 2023",
-      link: "https://stakes.difines.io",
-      imgUrl: "./images/projects/stake-referral-reward.webp",
+      name: "AI-Powered Fraud Detection System",
+      date: "Nov 2022 - Jan 2023",
+      link: "https://www.verticalai.com/projects/fraud-detection",
+      imgUrl: "./images/projects/fraud-detection.webp",
       description: [
-        <p>Has 5 level referral system working on CEX</p>,
-        <p>Staking with multiple tokens working on DEX</p>,
-        <p>Re-staking, withdrawing and add-staking are possible</p>,
-        <p>Strong reward system based on star earning for each actions</p>,
+        <p>Developed anomaly detection algorithms</p>,
+        <p>Created real-time transaction monitoring system</p>,
+        <p>Implemented machine learning model for fraud prediction</p>,
+        <p>Reduced fraudulent transactions by 80%</p>,
       ],
       domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "dex",
-        "cex",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Token Bridge",
-      date: "Aug 2023 - Aug 2023",
-      link: "https://bridgeone.netlify.app/bridge",
-      imgUrl: "./images/projects/bridge.webp",
-      description: [
-        <p>Support the multichain token transfer</p>,
-        <p>
-          Created the bridge backend and bridge smart contract on ethereum and
-          binance
-        </p>,
-        <p>Built with web3.js, react.js, node.js and solidity</p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "bridge",
-        "binance smart chain",
-        "ethereum",
-      ],
-    },
-    {
-      name: "FC Marketplace",
-      date: "August 2023",
-      link: "https://fcmarket.difines.io",
-      imgUrl: "./images/projects/fcmarket.webp",
-      description: [
-        <p>
-          Users can swap the crypto to real cash using this platform. We made
-          the secure pool that user can deposit token to make a contract.
-        </p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "ethers.js",
-        "wallet connect",
-        "metamask",
-        "firebase",
-        "solidity",
-        "hardhat",
-        "token",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "PEPE Bep20 | Burn & Drop",
-      date: "June 2023",
-      link: "https://pepe.markets/",
-      imgUrl: "./images/projects/burn_drop.webp",
-      description: [
-        <p>
-          Burn & Drop is the service that burns and airdrop each token to make a
-          token price rising up.
-        </p>,
-        <p>
-          Support PEPE Bep20, PEPE Sushi, PEPE MSG and more than 11 meme tokens
-        </p>,
-        <p>PEPE Syndicate</p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "web3.js",
-        "wallet connect",
-        "metamask",
-        "coinbase",
-        "solidity",
-        "hardhat",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Genogram",
-      date: "Sep 2021",
-      link: "https://genogram-gojs.netlify.app/",
-      imgUrl: "./images/projects/genogram.webp",
-      description: [
-        <p>Genorgram using react.js and gojs</p>,
-        <p>Generate the data from the database and editable by drag.</p>,
-      ],
-      domains: ["react.js", "gojs", "gosj-react", "html", "css"],
-    },
-    {
-      name: "Restaurant Website",
-      date: "Aug 2023",
-      link: "#",
-      imgUrl: "./images/projects/food.webp",
-      description: [<p>Website Theme Development</p>],
-      domains: ["react", "html5", "scss", "javascript", "css3"],
-    },
-    {
-      name: "Home Of 12V",
-      date: "May 2020",
-      imgUrl: "./images/projects/12v.webp",
-      link: "#",
-      description: [
-        <p>Front end working</p>,
-        <p>Mobile responsive using tailwindCSS and Next.js</p>,
-      ],
-      domains: ["next.js", "typescript", "tailwindCSS", "react.js", "netlify"],
-    },
-    {
-      name: "Voice Emailer App",
-      date: "Oct 2016",
-      link: "#",
-      imgUrl: "./images/projects/voice.webp",
-      description: [<p>Mobile App Development</p>],
-      domains: ["mobile", "ios", "ipad", "android"],
-    },
-    {
-      name: "Catch Me App",
-      date: "Dec 2016",
-      link: "#",
-      imgUrl: "./images/projects/catch.webp",
-      description: [<p>Mobile App Development</p>],
-      domains: ["mobile", "ios", "ipad", "android"],
-    },
-    {
-      name: "NFT Marketplace",
-      date: "July 2022 - Aug 2022",
-      imgUrl: "./images/projects/nftmarket.webp",
-      link: "https://nftmarket.difines.io",
-      description: [
-        <p>Minting, Selling, Buying and Listing NFTs</p>,
-        <p>
-          Has the <span className="font-medium">royalty</span> for the{" "}
-          <span className="font-medium">NFT creators</span>
-        </p>,
-        <p>
-          <span className="font-medium">Swap place</span> where user can swap
-          <span className="font-medium">two NFT properties</span>
-        </p>,
-        <p>
-          Planning to develop <span className="font-medium">combine place</span>{" "}
-          where makes NFT more <span className="font-medium">stronger</span>
-        </p>,
-        <p>
-          NFTs will be used as the{" "}
-          <span className="font-medium">game assets</span>
-        </p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "firebase",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "KOILLECTIBLE",
-      date: "Oct 2022 - Nov 2022",
-      imgUrl: "./images/projects/koi.webp",
-      link: "https://koi.difines.io",
-      description: [
-        <p>
-          The platform that brings fundraising to the global stage by combining
-          traditional web2 and the emerging web3 industries.
-        </p>,
-        <p>Koi fishes will be growing day by day</p>,
-        <p>Change water function</p>,
-        <p>
-          Fish swimming speed will be decreased based on the weight growing day
-          by day
-        </p>,
-        <p>
-          NFTs will be used as the{" "}
-          <span className="font-medium">game assets</span>
-        </p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "firebase",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "NFT Marketplace (Bloodshed)",
-      date: "Oct 2019 - Dec 2019",
-      imgUrl: "./images/projects/nftfront.webp",
-      link: "#",
-      description: [<p>Minting, Selling, Buying, Bidding, Listing NFTs</p>],
-      domains: [
-        "react.js",
-        "scss",
-        "node.js",
-        "express.js",
-        "mongodb",
-        "ethers.js",
-        "solidity",
-        "truffle",
-        "ethereum",
-      ],
-    },
-    {
-      name: "White Creator Token Minting Platform",
-      date: "Jun 2022",
-      link: "https://whitecreator.difines.io",
-      imgUrl: "./images/projects/whitecreator.webp",
-      description: [
-        <p>
-          Support <span className="font-medium">binance</span> and{" "}
-          <span className="font-medium">ethereum</span> chains for now.
-        </p>,
-        <p>
-          Create token easily within{" "}
-          <span className="font-medium">10 seconds by one click</span>
-        </p>,
-        <p>
-          Plan to add <span className="font-medium">more evm chains</span> such
-          like polygon, avax and etc.
-        </p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "NFT Minting Platform",
-      date: "Jun 2022",
-      link: "https://nft.difines.io",
-      imgUrl: "./images/projects/nft.webp",
-      description: [
-        <p>
-          Support <span className="font-medium">binance</span> and{" "}
-          <span className="font-medium">ethereum</span> chains for now.
-        </p>,
-        <p>
-          Create NFT easily within{" "}
-          <span className="font-medium">10 seconds by one click</span>
-        </p>,
-        <p>
-          Plan to add <span className="font-medium">more evm chains</span> such
-          like polygon, avax and etc.
-        </p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "scss",
-        "web3.js",
-        "solidity",
-        "hardhat",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Electon JS Project",
-      date: "Feb 2020",
-      imgUrl: "./images/projects/movie-electron.webp",
-      link: "#",
-      description: [<p>ElectronJS</p>, <p>Tailwind</p>, <p>React.js</p>],
-      domains: ["electronJS", "react.js", "tailwind"],
-    },
-    {
-      name: "Guessing App",
-      date: "Sep 2017",
-      link: "#",
-      imgUrl: "./images/projects/hairshop.webp",
-      description: [<p>Mobile App Development</p>],
-      domains: ["mobile", "ios", "ipad", "android"],
-    },
-    {
-      name: "Web3.0 Messaging Platform - Chat Fi",
-      date: "Feb 2023",
-      imgUrl: "./images/projects/chatfi.webp",
-      link: "https://chatfi.difines.io",
-      description: [
-        <p>Chat each other using wallet address</p>,
-        <p>Create the group and invite people</p>,
-        <p>Transfer token easily</p>,
-        <p>Create the token airdrop and voting event</p>,
-        <p>Plan to add many feature</p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "chatscope",
-        "web3.js",
-        "firebase",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "The Messages (record)",
-      date: "Mar 2023",
-      imgUrl: "./images/projects/message.webp",
-      link: "https://record.themessages.xyz",
-      description: [
-        <p>
-          Create the gold, silver and bronze types of congratulation messages to
-          the blockchain
-        </p>,
-        <p>Use the WBC token</p>,
-        <p>Share more SNS information by choosing the gold message</p>,
-        <p>Plan to add more feature</p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "web3.js",
-        "solidity",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "The Messages (booker)",
-      date: "Apr 2023",
-      imgUrl: "./images/projects/booker.webp",
-      link: "https://bettor.pepesushi.vip",
-      description: [
-        <p>Post to earn web3 project</p>,
-        <p>Integrated wallet connect, coinbase, metamask</p>,
-        <p>Use the nft.storage SDK to save metadata</p>,
-        <p>Post, Edit, Delete, Buy article</p>,
-      ],
-      domains: [
-        "react.js",
-        "typescript",
-        "web3.js",
-        "solidity",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Mining P2E Game",
-      date: "Apr 2023",
-      imgUrl: "./images/projects/mining.webp",
-      link: "https://intro.mining.difines.io",
-      description: [
-        <p>Play to Earn web3 mining game</p>,
-        <p>Integrate NFT assets with the game</p>,
-        <p>Buy the NFTs to earn much more token</p>,
-      ],
-      domains: [
-        "vue.js",
-        "web3.js",
-        "play to earn",
-        "solidity",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Partner",
-      date: "Mar 2023",
-      imgUrl: "./images/projects/partner.webp",
-      link: "https://partner.difines.io",
-      description: [
-        <p>Create the backend using openAI api with node.js and express.js</p>,
-        <p>Made the backend as serverless to run on the netlify</p>,
-        <p>Integrated react.js frontend with the backend</p>,
-      ],
-      domains: ["chatGPT", "react.js", "node.js", "express.js"],
-    },
-    {
-      name: "Clinicial Chart (Alarta)",
-      date: "2020 - 2021",
-      imgUrl: "./images/projects/clinical.webp",
-      link: "https://incarta.com.au/",
-      description: [
-        <p>
-          With over 25 years experience in the Health and Life Sciences sector,
-          Incarta has a demonstrated history of innovation in hardware and
-          software development. Our leading clinical records platform “Alarta”
-          is amongst the most advanced cloud based critical care medical record
-          systems available anywhere. It is also one of the most cost effective.
-          Alarta can be deployed within a few hours auto-configuring itself via
-          HL7.
-        </p>,
-      ],
-      domains: ["chatGPT", "react.js", "node.js", "express.js"],
-    },
-    {
-      name: "Facial Recognize",
-      date: "Feb 2020",
-      imgUrl: "./images/projects/facial-recognize.webp",
-      link: "https://github.com/aiden77mori/facial-recognization",
-      description: [
-        <p>Face dectection project using face-api.js</p>,
-        <p>API integration with react</p>,
-        <p>Multi faces recognize possible</p>,
-        <p>Recognize face using the camera</p>,
-      ],
-      domains: ["react.js", "face-api.js", "restful-api", "integration"],
-    },
-    {
-      name: "Art Worker",
-      date: "Dec 2019",
-      imgUrl: "./images/projects/art.webp",
-      link: "https://nft.difines.io/art",
-      description: [
-        <p>Photo Edition tools using fabric.js and react.js</p>,
-        <p>Filter, Adjust, Overlay, Drawing functions</p>,
-      ],
-      domains: ["fabric.js", "react.js", "typescript", "nft"],
-    },
-    {
-      name: "DIOR Virtual Shop",
-      date: "Oct 2020",
-      imgUrl: "./images/projects/dior.webp",
-      link: "https://dior-vrstore.netlify.app",
-      description: [
-        <p>Admin can upload the images and 3D assets</p>,
-        <p>Add or edit map with hubspot</p>,
-        <p>Purchase the product in VR environment</p>,
-      ],
-      domains: ["html", "javascript", "php", "panolens", "css", "three.js"],
-    },
-    {
-      name: "Album App",
-      date: "Feb 2021",
-      imgUrl: "./images/projects/app.webp",
-      link: "#",
-      description: [
-        <p>Sign up by OTP</p>,
-        <p>User can post images</p>,
-        <p>Make friend</p>,
-        <p>Social platform integration</p>,
-        <p>Upload and edit image using uploadcare widget</p>,
-        <p>Display address book of the mobile</p>,
-      ],
-      domains: [
-        "ionic",
-        "angular",
-        "node.js",
-        "express.js",
-        "postgreSql",
-        "scss",
-      ],
-    },
-    {
-      name: "Kingdom Battle",
-      date: "July 2022",
-      imgUrl: "./images/projects/kingdom.webp",
-      link: "https://kingdom.difines.io",
-      description: [
-        <p>
-          <span className="font-medium">Play to Earn</span> web3 battle type of
-          game
-        </p>,
-        <p>
-          Support <span className="font-medium">multiplayer</span> mode in which
-          up to <span className="font-medium">8 players</span> playing together
-        </p>,
-        <p>Defeat goblins and enemy boss to get the more token</p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "play to earn",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "World Speed",
-      date: "Sep 2022",
-      imgUrl: "./images/projects/worldspeed.webp",
-      link: "https://hamadeco.jp/cargame/",
-      description: [
-        <p>
-          <span className="font-medium">Play to Earn</span> web3 car racing game
-        </p>,
-        <p>
-          Play with 4 computer players on the{" "}
-          <span className="font-medium">easy, middle and hard</span> game mode
-        </p>,
-        <p>Be top winner to get the more token</p>,
-        <p>
-          Plan to add <span className="font-medium">multiplayer</span> mode
-        </p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "play to earn",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Crypto Snaker",
-      date: "Aug 2022",
-      imgUrl: "./images/projects/cryptosnake.webp",
-      link: "https://snake.difines.io",
-      description: [
-        <p>
-          <span className="font-medium">Play to Earn</span> web3 snake game
-        </p>,
-        <p>
-          Play with many <span className="font-medium">snake bots</span>
-        </p>,
-        <p>
-          Survive <span className="font-medium">as long as possible</span> to
-          get the more token
-        </p>,
-        <p>
-          Plan to add <span className="font-medium">multiplayer</span> mode
-        </p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "play to earn",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Puzzle",
-      date: "Oct 2022",
-      imgUrl: "./images/projects/puzzle.webp",
-      link: "https://puzzle.difines.io",
-      description: [
-        <p>
-          <span className="font-medium">Play to Earn</span> web3 puzzle game
-          (2048)
-        </p>,
-        <p>
-          Play on the <span className="font-medium">easy, middle and hard</span>{" "}
-          mode with the limited time
-        </p>,
-        <p>
-          Solve the puzzle{" "}
-          <span className="font-medium">as soon as possible</span> before time
-          is up to get the more token
-        </p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "play to earn",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "BlockDown",
-      date: "Nov 2022",
-      imgUrl: "./images/projects/blockdown.webp",
-      link: "https://blockdown.difines.io",
-      description: [
-        <p>
-          <span className="font-medium">Play to Earn</span> web3 block down game
-          (tetris)
-        </p>,
-        <p>
-          Play on the <span className="font-medium">easy, middle and hard</span>{" "}
-          mode
-        </p>,
-        <p>
-          Match the block to the{" "}
-          <span className="font-medium">right place</span> and break{" "}
-          <span className="font-medium">as much as possible</span> get the more
-          token
-        </p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "play to earn",
-        "binance smart chain",
-      ],
-    },
-    {
-      name: "Crypto Works Metaverse",
-      date: "Jan 2023",
-      imgUrl: "./images/projects/metaverse.webp",
-      link: "https://cryptoworks.difines.io",
-      description: [
-        <p>Meet the friends and chat each other</p>,
-        <p>Buy and sell your NFT assets</p>,
-        <p>Plan to add many features</p>,
-      ],
-      domains: [
-        "unity3D",
-        "solidity",
-        "web3.js",
-        "webgl",
-        "metaverse",
-        "play to earn",
-        "binance smart chain",
+        "Machine Learning",
+        "Anomaly Detection",
+        "Python",
+        "Scikit-learn",
+        "Apache Kafka",
+        "React.js",
+        "Node.js",
+        "PostgreSQL",
       ],
     },
   ]

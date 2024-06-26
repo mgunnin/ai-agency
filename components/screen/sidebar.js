@@ -4,7 +4,7 @@ import SideBarApp from "../base/sidebar"
 let renderApps = (props) => {
   let sideBarAppsJsx = []
   props.apps.forEach((app, index) => {
-    if (props.favourite_apps[app.id] === false) return
+    if (props.favorite_apps[app.id] === false) return
     sideBarAppsJsx.push(
       <SideBarApp
         key={index}
