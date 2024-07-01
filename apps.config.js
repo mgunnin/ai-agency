@@ -1,4 +1,4 @@
-import { displayTerminalCalc } from "./components/apps/calc"
+//import { displayTerminalCalc } from "./components/apps/calc"
 import { displayChrome } from "./components/apps/chrome"
 import { displayContactUs } from "./components/apps/gedit"
 import { displayAboutVerticalLabs } from "./components/apps/main"
@@ -38,7 +38,7 @@ const apps = [
   {
     id: "vscode",
     title: "Projects",
-    icon: "./themes/Yaru/apps/vscode.png",
+    icon: "./themes/Yaru/system/folder.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -53,7 +53,6 @@ const apps = [
     desktop_shortcut: false,
     screen: displayTerminal,
   },
-
   {
     id: "settings",
     title: "Settings",
