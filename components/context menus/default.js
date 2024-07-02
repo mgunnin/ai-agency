@@ -11,14 +11,14 @@ function DefaultMenu(props) {
     >
       <a
         rel="noreferrer noopener"
-        href="https://github.com/mgunnin/synthlete_home"
+        href="https://github.com/mgunnin/ai-agency"
         target="_blank"
         className="w-full block cursor-default py-0.5 hover:bg-ub-warm-grey hover:bg-opacity-20 mb-1.5"
       >
         <span className="ml-5">🌟</span>{" "}
-        <span className="ml-2">Star this Project</span>
+        <span className="ml-2">Visit Github</span>
       </a>
-      <a
+      {/*       <a
         rel="noreferrer noopener"
         href="https://github.com/mgunnin/synthlete_home/issues"
         target="_blank"
@@ -26,7 +26,7 @@ function DefaultMenu(props) {
       >
         <span className="ml-5">❗</span>{" "}
         <span className="ml-2">Report bugs</span>
-      </a>
+      </a> */}
       <Devider />
       <a
         rel="noreferrer noopener"
@@ -57,7 +57,7 @@ function DefaultMenu(props) {
         className="w-full block cursor-default py-0.5 hover:bg-ub-warm-grey hover:bg-opacity-20 mb-1.5"
       >
         <span className="ml-5">📥</span>{" "}
-        <span className="ml-2">Contact Me</span>
+        <span className="ml-2">Contact Us</span>
       </a>
       <Devider />
       <div

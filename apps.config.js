@@ -2,6 +2,7 @@
 import { displayChrome } from "./components/apps/chrome"
 import { displayContactUs } from "./components/apps/gedit"
 import { displayAboutVerticalLabs } from "./components/apps/main"
+import { displayResumeBuilder } from "./components/apps/resumebuilder"
 import { displaySettings } from "./components/apps/settings"
 import { displayTerminal } from "./components/apps/terminal"
 import { displayTrash } from "./components/apps/trash"
@@ -79,6 +80,15 @@ const apps = [
     favorite: false,
     desktop_shortcut: false,
     screen: displayTrash,
+  },
+  {
+    id: "resumebuilder",
+    title: "Resume Builder",
+    icon: "./themes/Yaru/system/folder.png",
+    disabled: false,
+    favorite: true,
+    desktop_shortcut: true,
+    screen: displayResumeBuilder,
   },
 ]
 

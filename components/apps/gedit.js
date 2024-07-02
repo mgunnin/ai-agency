@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import $ from "jquery"
-import ReactGA from "react-ga"
 import emailjs from "@emailjs/browser"
+import $ from "jquery"
+import React, { Component } from "react"
+import ReactGA from "react-ga"
 
 export class Gedit extends Component {
   constructor() {
@@ -99,7 +99,7 @@ export class Gedit extends Component {
             <input
               id="sender-subject"
               className=" w-full my-1 text-ubt-gedit-blue focus:bg-ub-gedit-light gedit-subject outline-none text-sm font-normal pl-6 py-0.5 bg-transparent"
-              placeholder="subject (may be a feedback for this website!)"
+              placeholder="Subject"
               spellCheck="false"
               autoComplete="off"
               type="text"

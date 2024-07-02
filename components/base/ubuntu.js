@@ -8,7 +8,7 @@ export class UbuntuApp extends Component {
   render() {
     return (
       <div
-        className="p-1 m-px z-10 bg-white bg-opacity-0 hover:bg-opacity-20 focus:bg-ub-orange focus:bg-opacity-50 focus:border-yellow-700 focus:border-opacity-100 border border-transparent outline-none rounded select-none w-24 h-20 flex flex-col justify-start items-center text-center text-xs font-normal text-white "
+        className="p-1 m-px z-10 bg-transparent hover:bg-white hover:bg-opacity-10 focus:bg-ub-orange focus:bg-opacity-50 focus:border-yellow-700 focus:border-opacity-100 border border-transparent outline-none rounded select-none w-24 h-20 flex flex-col justify-start items-center text-center text-xs font-normal text-white"
         id={"app-" + this.props.id}
         onDoubleClick={this.openApp}
         tabIndex={0}
@@ -20,7 +20,7 @@ export class UbuntuApp extends Component {
           src={this.props.icon}
           alt={"Ubuntu " + this.props.name}
         />
-        {this.props.name}
+        <span className="text-white">{this.props.name}</span>
       </div>
     )
   }
