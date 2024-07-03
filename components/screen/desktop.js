@@ -6,8 +6,8 @@ import UbuntuApp from "../base/ubuntu"
 import Window from "../base/window"
 import DefaultMenu from "../context menus/default"
 import DesktopMenu from "../context menus/desktop"
-import AllApplications from "./applications"
 import BackgroundImage from "../util components/background"
+import AllApplications from "./applications"
 import SideBar from "./sidebar"
 
 export class Desktop extends Component {
@@ -59,7 +59,7 @@ export class Desktop extends Component {
         apps.push({
           id: `new-folder-${folder.id}`,
           title: folder.name,
-          icon: "./themes/Yaru/system/folder.png",
+          icon: "./icons/folder.svg",
           disabled: true,
           favorite: false,
           desktop_shortcut: true,
@@ -480,7 +480,7 @@ export class Desktop extends Component {
     apps.push({
       id: `new-folder-${folder_id}`,
       title: folder_name,
-      icon: "./themes/Yaru/system/folder.png",
+      icon: "./icons/folder.svg",
       disabled: true,
       favorite: false,
       desktop_shortcut: true,

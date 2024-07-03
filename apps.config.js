@@ -20,8 +20,8 @@ const apps = [
   },
   {
     id: "chrome",
-    title: "Web Browser",
-    icon: "./themes/Yaru/apps/chrome.png",
+    title: "Browser",
+    icon: "./icons/browser.svg",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -39,7 +39,7 @@ const apps = [
   {
     id: "vscode",
     title: "Projects",
-    icon: "./themes/Yaru/system/folder.png",
+    icon: "./icons/folder.svg",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -48,7 +48,7 @@ const apps = [
   {
     id: "terminal",
     title: "Terminal",
-    icon: "./themes/Yaru/apps/bash.png",
+    icon: "./icons/terminal.svg",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,
@@ -57,16 +57,25 @@ const apps = [
   {
     id: "settings",
     title: "Settings",
-    icon: "./themes/Yaru/apps/gnome-control-center.png",
+    icon: "./icons/settings.svg",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,
     screen: displaySettings,
   },
   {
+    id: "resumebuilder",
+    title: "Resume Builder",
+    icon: "./icons/gameboy.svg",
+    disabled: false,
+    favorite: true,
+    desktop_shortcut: true,
+    screen: displayResumeBuilder,
+  },
+  {
     id: "contact-us",
     title: "Contact Us",
-    icon: "./themes/Yaru/apps/gedit.png",
+    icon: "./icons/edit-05.svg",
     disabled: false,
     favorite: false,
     desktop_shortcut: true,
@@ -75,20 +84,11 @@ const apps = [
   {
     id: "trash",
     title: "Trash",
-    icon: "./themes/Yaru/system/user-trash-full.png",
+    icon: "./icons/recycle.svg",
     disabled: false,
     favorite: false,
     desktop_shortcut: false,
     screen: displayTrash,
-  },
-  {
-    id: "resumebuilder",
-    title: "Resume Builder",
-    icon: "./themes/Yaru/system/folder.png",
-    disabled: false,
-    favorite: true,
-    desktop_shortcut: true,
-    screen: displayResumeBuilder,
   },
 ]
 

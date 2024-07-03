@@ -7,20 +7,20 @@ export class Trash extends Component {
     this.trashItems = [
       {
         name: "Our Competition",
-        icon: "./themes/filetypes/php.png",
+        icon: "./icons/filetypes/php.png",
       },
       {
         name: "Fired Clients",
-        icon: "./themes/filetypes/js.png",
+        icon: "./icons/filetypes/js.png",
       },
       {
         name: "node_modules",
-        icon: "./themes/Yaru/system/folder.png",
+        icon: "./icons/filetypes/zip.png",
       },
 
       {
-        name: "abandoned project",
-        icon: "./themes/Yaru/system/folder.png",
+        name: "Abandoned Projects",
+        icon: "./icons/folder.svg",
       },
     ]
     this.state = {

@@ -65,7 +65,9 @@ export class StatusCard extends Component {
         ref={this.wrapperRef}
         className={
           "absolute bg-ub-cool-grey rounded-md py-4 top-9 right-3 shadow border-black border border-opacity-20 status-card" +
-          (this.props.visible ? " visible animateShow" : " invisible")
+          (this.props.visible
+            ? " visible animateShow"
+            : " invisible animateHide")
         }
       >
         {" "}

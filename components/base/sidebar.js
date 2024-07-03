@@ -1,33 +1,33 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 export class SideBarApp extends Component {
   constructor() {
-    super();
-    this.id = null;
+    super()
+    this.id = null
     this.state = {
       showTitle: false,
       scaleImage: false,
-    };
+    }
   }
 
   componentDidMount() {
-    this.id = this.props.id;
+    this.id = this.props.id
   }
 
   scaleImage = () => {
     setTimeout(() => {
-      this.setState({ scaleImage: false });
-    }, 1000);
-    this.setState({ scaleImage: true });
-  };
+      this.setState({ scaleImage: false })
+    }, 1000)
+    this.setState({ scaleImage: true })
+  }
 
   openApp = () => {
     if (!this.props.isMinimized[this.id] && this.props.isClose[this.id]) {
-      this.scaleImage();
+      this.scaleImage()
     }
-    this.props.openApp(this.id);
-    this.setState({ showTitle: false });
-  };
+    this.props.openApp(this.id)
+    this.setState({ showTitle: false })
+  }
 
   render() {
     return (
@@ -35,16 +35,16 @@ export class SideBarApp extends Component {
         tabIndex="0"
         onClick={this.openApp}
         onMouseEnter={() => {
-          this.setState({ showTitle: true });
+          this.setState({ showTitle: true })
         }}
         onMouseLeave={() => {
-          this.setState({ showTitle: false });
+          this.setState({ showTitle: false })
         }}
         className={
           (this.props.isClose[this.id] === false && this.props.isFocus[this.id]
-            ? "bg-white bg-opacity-10 "
+            ? "bg-white bg-opacity-50 "
             : "") +
-          " w-auto p-2 outline-none relative transition hover:bg-white hover:bg-opacity-10 rounded m-1"
+          " w-auto p-2 outline-none relative transition hover:bg-white hover:bg-opacity-80 rounded m-1"
         }
         id={"sidebar-" + this.props.id}
       >
@@ -53,7 +53,7 @@ export class SideBarApp extends Component {
           height="28px"
           className="w-7"
           src={this.props.icon}
-          alt="Ubuntu App Icon"
+          alt="App Ico"
         />
         <img
           className={
@@ -75,8 +75,8 @@ export class SideBarApp extends Component {
           {this.props.title}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default SideBarApp;
+export default SideBarApp

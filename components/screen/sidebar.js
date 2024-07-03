@@ -75,8 +75,8 @@ export function AllApps(props) {
           width="28px"
           height="28px"
           className="w-7"
-          src="./themes/Yaru/system/view-app-grid-symbolic.svg"
-          alt="Ubuntu view app"
+          src="./icons/view-app-grid-symbolic.svg"
+          alt="View App"
         />
         <div
           className={
