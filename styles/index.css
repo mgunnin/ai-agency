@@ -156,6 +156,35 @@ input[type="range"].ubuntu-slider::-webkit-slider-thumb {
   border-radius: 5px;
 }
 
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+.sidebar-icon {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-icon.active {
+  background-color: #555;
+}
+
+.sidebar-icon.active img {
+  filter: brightness(1.2);
+}
+
 /* SideBarApp Scale image onClick */
 .scalable-app-icon {
   visibility: hidden;

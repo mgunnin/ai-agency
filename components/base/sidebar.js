@@ -42,9 +42,9 @@ export class SideBarApp extends Component {
         }}
         className={
           (this.props.isClose[this.id] === false && this.props.isFocus[this.id]
-            ? "bg-white bg-opacity-50 "
+            ? "bg-grey bg-opacity-50 "
             : "") +
-          " w-auto p-2 outline-none relative transition hover:bg-white hover:bg-opacity-80 rounded m-1"
+          " w-auto p-2 outline-none relative transition hover:bg-white hover:bg-opacity-50 rounded m-1"
         }
         id={"sidebar-" + this.props.id}
       >
@@ -53,7 +53,7 @@ export class SideBarApp extends Component {
           height="28px"
           className="w-7"
           src={this.props.icon}
-          alt="App Ico"
+          alt="App Icon"
         />
         <img
           className={

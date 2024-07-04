@@ -13,41 +13,45 @@ export class Terminal extends Component {
     this.commands_index = -1
     this.child_directories = {
       root: [
-        "books",
-        "projects",
-        "personal-documents",
-        "skills",
-        "languages",
-        "PDPU",
-        "interests",
+        "case-studies",
+        "services",
+        "team",
+        "technologies",
+        "clients",
+        "contact",
+        "about-us",
       ],
-      PDPU: ["Sem-6"],
-      books: [
-        "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.pdf",
-        "Elon Musk: How the Billionaire CEO of SpaceX.pdf",
-        "The $100 Startup_CHRIS_GUILLEBEAU.pdf",
-        "The_Magic_of_Thinking_Big.pdf",
+      "case-studies": [
+        "AI-Driven-Marketing-Optimization.pdf",
+        "Predictive-Maintenance-in-Manufacturing.pdf",
+        "Customer-Sentiment-Analysis.pdf",
+        "Fraud-Detection-in-Finance.pdf",
       ],
-      skills: [
-        "Front-end development",
-        "React.js",
-        "jQuery",
-        "Flutter",
-        "Express.js",
-        "SQL",
-        "Firebase",
+      services: [
+        "AI-Consulting",
+        "Machine-Learning-Development",
+        "Data-Analytics",
+        "Natural-Language-Processing",
+        "Computer-Vision",
+        "Robotic-Process-Automation",
       ],
-      projects: [
-        "vivek9patel-personal-portfolio",
-        "synonyms-list-react",
-        "economist.com-unlocked",
-        "Improve-Codeforces",
-        "flutter-banking-app",
-        "Meditech-Healthcare",
-        "CPU-Scheduling-APP-React-Native",
+      team: [
+        "Matt-Gunnin-CEO",
+        "Raquel-Ortega-COO",
+        "Jim-Huang-Lead-Data-Scientist",
+        "Timoty-Jones-Head-of-Engineering",
       ],
-      interests: ["Software Engineering", "Deep Learning", "Computer Vision"],
-      languages: ["Javascript", "C++", "Java", "Dart"],
+      technologies: [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-Learn",
+        "Keras",
+        "AWS",
+        "Azure",
+      ],
+      clients: ["TechCorp", "HealthPlus", "FinBank", "RetailGiant", "EduWorld"],
+      "about-us": ["Our-Mission", "Our-Vision", "Our-Values"],
     }
     this.state = {
       terminal: [],
@@ -262,7 +266,7 @@ export class Terminal extends Component {
         }
         if (target in this.child_directories) {
           result = this.childDirectories(target).join("")
-        } else if (target === "personal-documents") {
+        } else if (target === "company-documents") {
           result = "Nope! 🙃"
           break
         } else {
@@ -279,7 +283,7 @@ export class Terminal extends Component {
         break
       case "pwd":
         let str = this.current_directory
-        result = str.replace("~", "/home/vivek")
+        result = str.replace("~", "/home/vertical-labs")
         break
       case "code":
         if (words[0] === "." || words.length === 0) {
@@ -288,7 +292,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands:[ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg]"
+            "' not found, or not yet implemented.<br>Available Commands:[ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg]"
         }
         break
       case "echo":
@@ -301,7 +305,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "chrome":
@@ -311,7 +315,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "todoist":
@@ -321,7 +325,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "trash":
@@ -331,17 +335,17 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
-      case "about-vivek":
+      case "about-vertical-labs":
         if (words[0] === "." || words.length === 0) {
-          this.props.openApp("about-vivek")
+          this.props.openApp("about-vertical-labs")
         } else {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "terminal":
@@ -351,7 +355,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "settings":
@@ -361,7 +365,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "sendmsg":
@@ -371,7 +375,7 @@ export class Terminal extends Component {
           result =
             "Command '" +
             main +
-            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+            "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
         }
         break
       case "clear":
@@ -393,7 +397,7 @@ export class Terminal extends Component {
         result =
           "Command '" +
           main +
-          "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]"
+          "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vertical-labs, todoist, trash, settings, sendmsg ]"
     }
     document.getElementById(`row-result-${rowId}`).innerHTML = result
     this.appendTerminalRow()
