@@ -26,7 +26,10 @@ export class AboutUs extends Component {
       lastVisitedScreen = "about"
     }
 
-    // focus last visited screen
+    // Debugging log
+    console.log("Last visited screen:", lastVisitedScreen)
+
+    // Focus last visited screen
     this.changeScreen(document.getElementById(lastVisitedScreen))
   }
 
@@ -38,8 +41,8 @@ export class AboutUs extends Component {
         ? screenId.target.id
         : "about"
 
-    // If the clicked screen is the same as the current active screen, do nothing
-    if (screen === this.state.active_screen) return
+    // Debugging log
+    console.log("Changing to screen:", screen)
 
     // Store this state
     localStorage.setItem("about-section", screen)
@@ -62,7 +65,7 @@ export class AboutUs extends Component {
       <>
         <div
           id="about"
-          //tabIndex="0"
+          tabIndex="0"
           //onFocus={this.changeScreen}
           onClick={this.changeScreen}
           className={
@@ -75,7 +78,7 @@ export class AboutUs extends Component {
           <img
             className=" w-3 md:w-4"
             alt="about us"
-            src="./themes/Yaru/status/about.svg"
+            src="./icons/folder.svg"
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">About Us</span>
         </div>
@@ -90,11 +93,7 @@ export class AboutUs extends Component {
             " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
-          <img
-            className=" w-3 md:w-4"
-            alt="tools"
-            src="./themes/Yaru/status/faq.svg"
-          />
+          <img className=" w-3 md:w-4" alt="tools" src="./icons/folder.svg" />
           <span className=" ml-1 md:ml-2 text-gray-50 ">FAQ</span>
         </div>
         <div
@@ -129,7 +128,7 @@ export class AboutUs extends Component {
           <img
             className=" w-3 md:w-4"
             alt="projects"
-            src="./themes/Yaru/status/projects.svg"
+            src="./icons/folder.svg"
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
         </div>
@@ -144,11 +143,7 @@ export class AboutUs extends Component {
             " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
-          <img
-            className=" w-3 md:w-4"
-            alt="vivek' skills"
-            src="./themes/Yaru/status/skills.svg"
-          />
+          <img className=" w-3 md:w-4" alt="skills" src="./icons/folder.svg" />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Skills</span>
         </div>
         <div
@@ -162,11 +157,7 @@ export class AboutUs extends Component {
             " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
-          <img
-            className=" w-3 md:w-4"
-            alt="vivek's resume"
-            src="./themes/Yaru/status/download.svg"
-          />
+          <img className=" w-3 md:w-4" alt="resume" src="./icons/folder.svg" />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
         </div>
       </>

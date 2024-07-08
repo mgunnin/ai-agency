@@ -61,7 +61,7 @@ export class Gedit extends Component {
       })
 
     ReactGA.event({
-      category: "Send Message",
+      category: "Contact Us",
       action: `${name}, ${subject}, ${message}`,
     })
   }
@@ -70,7 +70,7 @@ export class Gedit extends Component {
     return (
       <div className="w-full h-full relative flex flex-col bg-ub-cool-grey text-white select-none">
         <div className="flex items-center justify-between w-full bg-ub-gedit-light bg-opacity-60 border-b border-t border-blue-400 text-sm">
-          <span className="font-bold ml-2">Send a Message to Me</span>
+          <span className="font-bold ml-2">Contact Vertical Labs</span>
           <div className="flex">
             <div
               onClick={this.sendMessage}
