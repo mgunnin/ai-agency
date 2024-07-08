@@ -1,9 +1,10 @@
+import React from "react"
 import { Component } from "react"
 import ReactGA from "react-ga"
 
 export class AboutUs extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.screens = {}
     this.state = {
       screen: () => {},
@@ -65,14 +66,14 @@ export class AboutUs extends Component {
       <>
         <div
           id="about"
-          tabIndex="0"
+          tabIndex={0}
           //onFocus={this.changeScreen}
           onClick={this.changeScreen}
           className={
             (this.state.active_screen === "about"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img
@@ -84,13 +85,13 @@ export class AboutUs extends Component {
         </div>
         <div
           id="faq"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={this.changeScreen}
           className={
             (this.state.active_screen === "faq"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img className=" w-3 md:w-4" alt="tools" src="./icons/folder.svg" />
@@ -98,13 +99,13 @@ export class AboutUs extends Component {
         </div>
         <div
           id="history"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={this.changeScreen}
           className={
             (this.state.active_screen === "history"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img
@@ -116,13 +117,13 @@ export class AboutUs extends Component {
         </div>
         <div
           id="projects"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={this.changeScreen}
           className={
             (this.state.active_screen === "projects"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img
@@ -134,13 +135,13 @@ export class AboutUs extends Component {
         </div>
         <div
           id="skills"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={this.changeScreen}
           className={
             (this.state.active_screen === "skills"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img className=" w-3 md:w-4" alt="skills" src="./icons/folder.svg" />
@@ -148,13 +149,13 @@ export class AboutUs extends Component {
         </div>
         <div
           id="resume"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={this.changeScreen}
           className={
             (this.state.active_screen === "resume"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
               : " hover:bg-gray-50 hover:bg-opacity-5 ") +
-            " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
+            " w-28 md:w-full md:rounded-none rounded-sm outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5 cursor-pointer"
           }
         >
           <img className=" w-3 md:w-4" alt="resume" src="./icons/folder.svg" />
@@ -723,7 +724,6 @@ function Projects() {
     flutter: "blue-400",
     dart: "blue-500",
     "react-native": "purple-500",
-    firebase: "red-300",
     html5: "pink-600",
     sass: "pink-400",
     scss: "pink-300",

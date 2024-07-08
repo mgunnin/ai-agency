@@ -6,8 +6,8 @@ import StatusCard from "../util components/status_card"
 import db from "../utils/firebase"
 
 export default class Navbar extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       status_card: false,
       visit_count: 0,
@@ -28,7 +28,7 @@ export default class Navbar extends Component {
       })
 
       const visitInfo = await getDoc(docRef)
-      const count = visitInfo.data().visit
+      const count = visitInfo.data()?.visit ?? 0
       this.setState({ visit_count: count })
       this.setState({ loading: false })
     } catch (err) {
@@ -41,7 +41,7 @@ export default class Navbar extends Component {
     return (
       <div className="main-navbar-vp absolute top-0 right-0 w-screen shadow-md flex flex-nowrap justify-between items-center bg-ub-grey text-ubt-grey text-sm select-none z-50">
         <div
-          tabIndex="0"
+          tabIndex={0}
           className={
             "pl-3 pr-3 outline-none flex items-center  transition duration-100 ease-in-out border-b-2 border-transparent focus:border-ubb-orange py-1 "
           }
@@ -66,7 +66,7 @@ export default class Navbar extends Component {
                     fill="currentFill"
                   />
                 </svg>
-                <span class="sr-only">Loading...</span>
+                <span className="sr-only">Loading...</span>
               </div>
             ) : (
               this.state.visit_count
@@ -74,7 +74,7 @@ export default class Navbar extends Component {
           </span>
         </div>
         <div
-          tabIndex="0"
+          tabIndex={0}
           className={
             "pl-2 pr-2 text-xs md:text-sm outline-none transition duration-100 ease-in-out border-b-2 border-transparent focus:border-ubb-orange py-1"
           }
@@ -83,7 +83,7 @@ export default class Navbar extends Component {
         </div>
         <div
           id="status-bar"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={() => {
             this.setState({ status_card: true })
           }}

@@ -20,8 +20,8 @@ class Slider extends Component {
 }
 
 export class StatusCard extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.wrapperRef = React.createRef()
     this.state = {
       sound_level: 75, // better of setting default values from localStorage
@@ -38,9 +38,12 @@ export class StatusCard extends Component {
         brightness_level: localStorage.getItem("brightness-level") || 100,
       },
       () => {
-        document.getElementById("monitor-screen").style.filter = `brightness(${
-          (3 / 400) * this.state.brightness_level + 0.25
-        })`
+        const monitorScreen = document.getElementById("monitor-screen")
+        if (monitorScreen) {
+          monitorScreen.style.filter = `brightness(${
+            (3 / 400) * this.state.brightness_level + 0.25
+          })`
+        }
       }
     )
   }
