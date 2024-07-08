@@ -38,10 +38,13 @@ export class AboutUs extends Component {
         ? screenId.target.id
         : "about"
 
-    // store this state
+    // If the clicked screen is the same as the current active screen, do nothing
+    if (screen === this.state.active_screen) return
+
+    // Store this state
     localStorage.setItem("about-section", screen)
 
-    // google analytics
+    // Google analytics
     ReactGA.pageview(`/${screen}`)
 
     this.setState({
@@ -59,8 +62,9 @@ export class AboutUs extends Component {
       <>
         <div
           id="about"
-          tabIndex="0"
-          onFocus={this.changeScreen}
+          //tabIndex="0"
+          //onFocus={this.changeScreen}
+          onClick={this.changeScreen}
           className={
             (this.state.active_screen === "about"
               ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95"
