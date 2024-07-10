@@ -37,9 +37,9 @@ const apps = [
     screen: displayTerminalCalc,
   }, */
   {
-    id: "vscode",
+    id: "projects",
     title: "Projects",
-    icon: "./icons/folder.svg",
+    icon: "./icons/game_controller.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -75,7 +75,7 @@ const apps = [
   {
     id: "contact-us",
     title: "Contact Us",
-    icon: "./icons/edit-05.svg",
+    icon: "./icons/contact_us.png",
     disabled: false,
     favorite: false,
     desktop_shortcut: true,
