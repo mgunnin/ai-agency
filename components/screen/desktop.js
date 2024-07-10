@@ -1,6 +1,6 @@
 import $ from "jquery"
 import { Component } from "react"
-import ReactGA from "react-ga"
+import ReactGA from "react-ga4"
 import apps from "../../apps.config"
 import UbuntuApp from "../base/ubuntu"
 import Window from "../base/window"
@@ -35,9 +35,7 @@ export class Desktop extends Component {
   }
 
   componentDidMount() {
-    // google analytics
-    ReactGA.pageview("/desktop")
-
+    ReactGA.send({ hitType: "pageview", page: "/desktop" })
     this.fetchAppsData()
     this.setContextListeners()
     this.setEventListeners()

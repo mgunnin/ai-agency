@@ -3,7 +3,6 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/preline/preline.js",
   ],
   theme: {
     backgroundColor: (theme) => ({
@@ -59,5 +58,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("preline/plugin")],
+  plugins: [],
 }

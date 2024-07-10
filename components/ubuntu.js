@@ -1,5 +1,5 @@
 import { Component } from "react"
-import ReactGA from "react-ga"
+import ReactGA from "react-ga4"
 import BootingScreen from "./screen/booting"
 import Desktop from "./screen/desktop"
 import LockScreen from "./screen/lockscreen"

@@ -3,8 +3,8 @@ import React from "react"
 export default function Spotify() {
   return (
     <iframe
-      style="border-radius:12px"
-      src="https://open.spotify.com/playlist/37i9dQZEVXcR1BCjjHfQLf?si=dc476175d8ba4fb4"
+      style={{ borderRadius: "12px" }}
+      src="https://open.spotify.com/embed/playlist/2EmphaIKNHH9wARNTGf7Ra"
       frameBorder="0"
       title="Spotify"
       className="h-full w-full bg-ub-cool-grey"
@@ -13,5 +13,5 @@ export default function Spotify() {
 }
 
 export const displaySpotify = () => {
-  ;<Spotify> </Spotify>
+  return <Spotify />
 }

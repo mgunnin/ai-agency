@@ -1,6 +1,6 @@
 import $ from "jquery"
 import React, { Component } from "react"
-import ReactGA from "react-ga"
+import ReactGA from "react-ga4"
 
 export class Terminal extends Component {
   constructor() {

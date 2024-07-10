@@ -1,6 +1,5 @@
-import React from "react"
-import { Component } from "react"
-import ReactGA from "react-ga"
+import React, { Component } from "react"
+import ReactGA from "react-ga4"
 
 export class AboutUs extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export class AboutUs extends Component {
 
   componentDidMount() {
     this.screens = {
-      about: <AboutVerticalLabs />,
+      about: <About />,
       history: <History />,
       projects: <Projects />,
       skills: <Skills />,
@@ -49,7 +48,7 @@ export class AboutUs extends Component {
     localStorage.setItem("about-section", screen)
 
     // Google analytics
-    ReactGA.pageview(`/${screen}`)
+    ReactGA.send({ hitType: "pageview", page: `/${screen}` })
 
     this.setState({
       screen: this.screens[screen],
@@ -202,11 +201,11 @@ export class AboutUs extends Component {
 
 export default AboutUs
 
-export const displayAboutVerticalLabs = () => {
+export const displayAbout = () => {
   return <AboutUs />
 }
 
-function AboutVerticalLabs() {
+function About() {
   return (
     <>
       <div className="w-20 md:w-32 mt-4 bg-white rounded-full">

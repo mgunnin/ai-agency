@@ -1,6 +1,6 @@
-import { Component } from "react"
+import React, { Component } from "react"
 import Draggable from "react-draggable"
-import ReactGA from "react-ga"
+import ReactGA from "react-ga4"
 import Settings from "../apps/settings"
 import { displayTerminal } from "../apps/terminal"
 
@@ -28,14 +28,23 @@ export class Window extends Component {
     this.setDefaultWindowDimenstion()
 
     // google analytics
-    ReactGA.pageview(`/${this.id}`)
+    ReactGA.send({
+      hitType: "pageview",
+      page: `/${this.id}`,
+      title: "Custom Title",
+    })
 
     // on window resize, resize boundary
     window.addEventListener("resize", this.resizeBoundries)
   }
 
   componentWillUnmount() {
-    ReactGA.pageview("/desktop")
+    ReactGA.send({
+      hitType: "pageview",
+      page: "/desktop",
+      title: "Custom Title",
+    })
+
     window.removeEventListener("resize", this.resizeBoundries)
   }
 
@@ -97,7 +106,7 @@ export class Window extends Component {
   checkOverlap = () => {
     var r = document.querySelector("#" + this.id)
     var rect = r.getBoundingClientRect()
-    if (rect.right.toFixed(1) > window.innerWidth - 50) {
+    if (rect.x.toFixed(1) < 50) {
       // if this window overlapps with SideBar
       this.props.hideSideBar(this.id, true)
     } else {
@@ -204,12 +213,7 @@ export class Window extends Component {
         >
           <WindowYBorder resize={this.handleHorizontalResize} />
           <WindowXBorder resize={this.handleVerticleResize} />
-          <WindowTopBar
-            title={this.props.title}
-            maximizeWindow={this.maximizeWindow}
-            minimizeWindow={this.minimizeWindow}
-            sizeStatus={this.state.maximized}
-          />
+          <WindowTopBar title={this.props.title} />
           <WindowEditButtons
             minimize={this.minimizeWindow}
             maximize={this.maximizeWindow}
@@ -242,16 +246,11 @@ export default Window
 
 // Window's title bar
 export function WindowTopBar(props) {
-  function changeWindowSize() {
-    if (!props.sizeStatus) props.maximizeWindow()
-  }
-
   return (
     <div
       className={
         " relative bg-ub-window-title border-t-2 border-white border-opacity-5 py-1.5 px-3 text-white w-full select-none rounded-b-none"
       }
-      onDoubleClick={changeWindowSize}
     >
       <div className="flex justify-center text-sm font-bold">{props.title}</div>
     </div>

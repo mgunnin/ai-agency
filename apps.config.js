@@ -1,22 +1,22 @@
 //import { displayTerminalCalc } from "./components/apps/calc"
 import { displayChrome } from "./components/apps/chrome"
 import { displayContactUs } from "./components/apps/gedit"
-import { displayAboutVerticalLabs } from "./components/apps/main"
-import { displayResumeBuilder } from "./components/apps/resumebuilder"
+import { displayAbout } from "./components/apps/main"
 import { displaySettings } from "./components/apps/settings"
+import displaySpotify from "./components/apps/spotify"
 import { displayTerminal } from "./components/apps/terminal"
 import { displayTrash } from "./components/apps/trash"
 import displayVsCode from "./components/apps/vscode"
 
 const apps = [
   {
-    id: "about-vertical-labs",
-    title: "About Vertical Labs",
+    id: "about",
+    title: "About",
     icon: "./images/logos/vertical_labs.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
-    screen: displayAboutVerticalLabs,
+    screen: displayAbout,
   },
   {
     id: "chrome",
@@ -55,6 +55,15 @@ const apps = [
     screen: displayTerminal,
   },
   {
+    id: "spotify",
+    title: "Spotify",
+    icon: "./images/logos/spotify.png",
+    disabled: false,
+    favorite: true,
+    desktop_shortcut: false,
+    screen: displaySpotify,
+  },
+  {
     id: "settings",
     title: "Settings",
     icon: "./icons/settings.svg",
@@ -62,15 +71,6 @@ const apps = [
     favorite: true,
     desktop_shortcut: false,
     screen: displaySettings,
-  },
-  {
-    id: "resumebuilder",
-    title: "Resume Builder",
-    icon: "./icons/gameboy.svg",
-    disabled: false,
-    favorite: true,
-    desktop_shortcut: true,
-    screen: displayResumeBuilder,
   },
   {
     id: "contact-us",
