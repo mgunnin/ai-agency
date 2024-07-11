@@ -8,6 +8,8 @@ import { displayTerminal } from "./components/apps/terminal"
 import { displayTrash } from "./components/apps/trash"
 import displayVsCode from "./components/apps/vscode"
 
+//Add app for tools and prompts
+
 const apps = [
   {
     id: "about",

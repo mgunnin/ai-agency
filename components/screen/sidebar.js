@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import SideBarApp from "../base/sidebar"
 
 let renderApps = (props) => {
@@ -22,46 +22,12 @@ let renderApps = (props) => {
   return sideBarAppsJsx
 }
 
-export default function SideBar(props) {
-  function showSideBar() {
-    props.hideSideBar(null, false)
-  }
-
-  function hideSideBar() {
-    setTimeout(() => {
-      props.hideSideBar(null, true)
-    }, 2000)
-  }
-
-  return (
-    <>
-      <div
-        className={
-          (props.hide ? " translate-x-full " : "") +
-          " absolute transform duration-300 select-none z-40 right-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-90"
-        }
-      >
-        {Object.keys(props.closed_windows).length !== 0
-          ? renderApps(props)
-          : null}
-        <AllApps showApps={props.showAllApps} />
-      </div>
-      <div
-        onMouseEnter={showSideBar}
-        onMouseLeave={hideSideBar}
-        className={"w-1 h-full absolute top-0 right-0 bg-transparent z-50"}
-      ></div>
-    </>
-  )
-}
-
 export function AllApps(props) {
   const [title, setTitle] = useState(false)
 
   return (
     <div
       className={`w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center`}
-      style={{ marginTop: "auto" }}
       onMouseEnter={() => {
         setTitle(true)
       }}
@@ -88,5 +54,38 @@ export function AllApps(props) {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function SideBar(props) {
+  function showSideBar() {
+    props.hideSideBar(null, false)
+  }
+
+  function hideSideBar() {
+    setTimeout(() => {
+      props.hideSideBar(null, true)
+    }, 2000)
+  }
+
+  return (
+    <>
+      <div
+        className={
+          (props.hide ? " translate-x-full " : "") +
+          " absolute transform duration-300 select-none z-40 right-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-90"
+        }
+      >
+        <AllApps showApps={props.showAllApps} />
+        {Object.keys(props.closed_windows).length !== 0
+          ? renderApps(props)
+          : null}
+      </div>
+      <div
+        onMouseEnter={showSideBar}
+        onMouseLeave={hideSideBar}
+        className={"w-1 h-full absolute top-0 right-0 bg-transparent z-50"}
+      ></div>
+    </>
   )
 }
