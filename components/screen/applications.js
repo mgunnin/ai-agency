@@ -84,7 +84,7 @@ export class AllApplications extends React.Component {
             <img
               className={"w-5 h-5"}
               alt="search icon"
-              src={"./images/logos/search.png"}
+              src={"./icons/search.png"}
             />
             <input
               className={"w-3/4 p-1 bg-transparent focus:outline-none"}

@@ -38,7 +38,7 @@ export default function Meta() {
         itemProp="description"
         content="Vertical Labs is an AI agency that specializes in building cutting-edge products and services."
       />
-      <meta itemProp="image" content="images/logos/vertical_labs.png" />
+      <meta itemProp="image" content="icons/logos/vertical_labs.png" />
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
       <meta
@@ -51,7 +51,7 @@ export default function Meta() {
       />
       <meta name="twitter:site" content="vertical_labs" />
       <meta name="twitter:creator" content="vertical_labs" />
-      <meta name="twitter:image:src" content="images/logos/vertical_labs.png" />
+      <meta name="twitter:image:src" content="icons/logos/vertical_labs.png" />
       {/*Open Graph general (Facebook, Pinterest & Google+)*/}
       <meta
         name="og:title"
@@ -61,7 +61,7 @@ export default function Meta() {
         name="og:description"
         content="Vertical Labs is an AI agency that specializes in building cutting-edge products and services."
       />
-      <meta name="og:image" content="images/logos/vertical_labs.png" />
+      <meta name="og:image" content="icons/logos/vertical_labs.png" />
       <meta name="og:url" content="https://github.com/mgunnin/ai-agency" />
       <meta
         name="og:site_name"
@@ -69,8 +69,8 @@ export default function Meta() {
       />
       <meta name="og:locale" content="en_IN" />
       <meta name="og:type" content="website" />
-      <link rel="icon" href="images/logos/vertical_labs.png" />
-      <link rel="apple-touch-icon" href="images/logos/vertical_labs.png" />
+      <link rel="icon" href="icons/logos/vertical_labs.png" />
+      <link rel="apple-touch-icon" href="icons/logos/vertical_labs.png" />
       <link
         rel="preload"
         href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"

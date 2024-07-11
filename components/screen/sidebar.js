@@ -38,7 +38,7 @@ export default function SideBar(props) {
       <div
         className={
           (props.hide ? " translate-x-full " : "") +
-          " absolute transform duration-300 select-none z-40 right-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-50"
+          " absolute transform duration-300 select-none z-40 right-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-90"
         }
       >
         {Object.keys(props.closed_windows).length !== 0
@@ -75,7 +75,7 @@ export function AllApps(props) {
           width="28px"
           height="28px"
           className="w-7"
-          src="./icons/view-app-grid-symbolic.svg"
+          src="./icons/app_grid.svg"
           alt="View App"
         />
         <div

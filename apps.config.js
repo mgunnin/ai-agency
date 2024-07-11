@@ -12,7 +12,7 @@ const apps = [
   {
     id: "about",
     title: "About",
-    icon: "./images/logos/vertical_labs.png",
+    icon: "./icons/about.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -21,7 +21,7 @@ const apps = [
   {
     id: "chrome",
     title: "Browser",
-    icon: "./icons/browser.svg",
+    icon: "./icons/browser.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -39,7 +39,7 @@ const apps = [
   {
     id: "projects",
     title: "Projects",
-    icon: "./icons/game_controller.png",
+    icon: "./icons/projects.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: true,
@@ -48,7 +48,7 @@ const apps = [
   {
     id: "terminal",
     title: "Terminal",
-    icon: "./icons/terminal.svg",
+    icon: "./icons/terminal.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,
@@ -57,7 +57,7 @@ const apps = [
   {
     id: "spotify",
     title: "Spotify",
-    icon: "./images/logos/spotify.png",
+    icon: "./icons/logos/spotify.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,
@@ -66,7 +66,7 @@ const apps = [
   {
     id: "settings",
     title: "Settings",
-    icon: "./icons/settings.svg",
+    icon: "./icons/settings.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,
@@ -84,7 +84,7 @@ const apps = [
   {
     id: "trash",
     title: "Trash",
-    icon: "./icons/recycle.svg",
+    icon: "./icons/trash.png",
     disabled: false,
     favorite: false,
     desktop_shortcut: false,

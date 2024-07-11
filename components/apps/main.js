@@ -6,7 +6,8 @@ export class AboutUs extends Component {
     super(props)
     this.screens = {}
     this.state = {
-      screen: () => {},
+      //screen: () => {},
+      screen: null,
       active_screen: "about", // by default 'about' screen is active
       navbar: false,
     }
@@ -208,10 +209,10 @@ export const displayAbout = () => {
 function About() {
   return (
     <>
-      <div className="w-20 md:w-32 mt-4 bg-white rounded-full">
+      <div className="w-20 md:w-32 mt-4 rounded-full">
         <img
           className="w-full rounded-full"
-          src="./images/logos/vertical_labs.png"
+          src="./icons/logos/vertical_labs.png"
           alt="Vertical Labs Logo"
         />
       </div>
