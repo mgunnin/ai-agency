@@ -72,7 +72,7 @@ export class Chrome extends Component {
         >
           <img
             className="w-5"
-            src="./themes/Yaru/status/chrome_refresh.svg"
+            src="./icons/chrome_refresh.svg"
             alt="Ubuntu Chrome Refresh"
           />
         </div>
@@ -82,7 +82,7 @@ export class Chrome extends Component {
         >
           <img
             className="w-5"
-            src="./themes/Yaru/status/chrome_home.svg"
+            src="./icons/chrome_home.svg"
             alt="Ubuntu Chrome Home"
           />
         </div>

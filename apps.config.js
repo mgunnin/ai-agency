@@ -1,6 +1,6 @@
 //import { displayTerminalCalc } from "./components/apps/calc"
 import { displayChrome } from "./components/apps/chrome"
-import { displayContactUs } from "./components/apps/gedit"
+import { displayContactUs } from "./components/apps/contact_us"
 import { displayAbout } from "./components/apps/main"
 import { displaySettings } from "./components/apps/settings"
 import displaySpotify from "./components/apps/spotify"
@@ -32,7 +32,7 @@ const apps = [
   /*   {
     id: "calc",
     title: "Calc",
-    icon: "./themes/Yaru/apps/calc.png",
+    icon: "./icons/calc.png",
     disabled: false,
     favorite: true,
     desktop_shortcut: false,

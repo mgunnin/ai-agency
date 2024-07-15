@@ -26,13 +26,13 @@ export class Gedit extends Component {
 
     let error = false
 
-    if (name.length === 0) {
+    if (typeof name === "string" && name.length === 0) {
       $("#sender-name").val("")
       $("#sender-name").attr("placeholder", "Name must not be Empty!")
       error = true
     }
 
-    if (message.length === 0) {
+    if (typeof message === "string" && message.length === 0) {
       $("#sender-message").val("")
       $("#sender-message").attr("placeholder", "Message must not be Empty!")
       error = true
@@ -49,17 +49,18 @@ export class Gedit extends Component {
       message: message,
     }
 
-    emailjs
-      .send(serviceID, templateID, templateParams)
-      .then(() => {
-        this.setState({ sending: false })
-        $("#close-gedit").trigger("click")
-      })
-      .catch(() => {
-        this.setState({ sending: false })
-        $("#close-gedit").trigger("click")
-      })
-
+    if (serviceID && templateID) {
+      emailjs
+        .send(serviceID, templateID, templateParams)
+        .then(() => {
+          this.setState({ sending: false })
+          $("#close-gedit").trigger("click")
+        })
+        .catch(() => {
+          this.setState({ sending: false })
+          $("#close-gedit").trigger("click")
+        })
+    }
     ReactGA.event({
       category: "Contact Us",
       action: `${name}, ${subject}, ${message}`,
@@ -115,7 +116,6 @@ export class Gedit extends Component {
               placeholder="Message"
               spellCheck="false"
               autoComplete="none"
-              type="text"
             />
             <span className="absolute left-1 top-1 font-bold  text-sm text-ubt-gedit-blue">
               3
@@ -126,8 +126,8 @@ export class Gedit extends Component {
           <div className="flex justify-center items-center animate-pulse h-full w-full bg-gray-400 bg-opacity-30 absolute top-0 left-0">
             <img
               className={" w-8 absolute animate-spin"}
-              src="./themes/Yaru/status/process-working-symbolic.svg"
-              alt="Ubuntu Process Symbol"
+              src="./icons/process-working-symbolic.svg"
+              alt="Process Symbol"
             />
           </div>
         ) : null}

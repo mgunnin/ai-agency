@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import Clock from "../util components/clock"
-import Status from "../util components/status"
-import StatusCard from "../util components/status_card"
+import Clock from "../util/clock"
+import Status from "../util/status"
+import StatusCard from "../util/status_card"
 
 export default class Navbar extends Component {
   constructor() {

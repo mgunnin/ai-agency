@@ -38,14 +38,20 @@ export class Trash extends Component {
 
   focusFile = (e) => {
     // icon
-    $(e.target).children().get(0).classList.toggle("opacity-60")
+    const target = $(e.target).children().get(0)
+    if (target) {
+      target.classList.toggle("opacity-60")
+    }
     // file name
-    $(e.target).children().get(1).classList.toggle("bg-ub-orange")
+    const fileName = $(e.target).children().get(1)
+    if (fileName) {
+      fileName.classList.toggle("bg-ub-orange")
+    }
   }
 
   emptyTrash = () => {
     this.setState({ empty: true })
-    localStorage.setItem("trash-empty", true)
+    localStorage.setItem("trash-empty", "true")
   }
 
   emptyScreen = () => {
@@ -53,8 +59,8 @@ export class Trash extends Component {
       <div className="flex-grow flex flex-col justify-center items-center">
         <img
           className=" w-24"
-          src="./themes/Yaru/status/user-trash-symbolic.svg"
-          alt="Ubuntu Trash"
+          src="./icons/user-trash-symbolic.svg"
+          alt="Trash"
         />
         <span className="font-bold mt-4 text-xl px-1 text-gray-400">
           Trash is Empty
@@ -70,13 +76,13 @@ export class Trash extends Component {
           return (
             <div
               key={index}
-              tabIndex="1"
+              tabIndex={1}
               onFocus={this.focusFile}
               onBlur={this.focusFile}
               className="flex flex-col items-center text-sm outline-none w-16 my-2 mx-4"
             >
               <div className="w-16 h-16 flex items-center justify-center">
-                <img src={item.icon} alt="Ubuntu File Icons" />
+                <img src={item.icon} alt="File Icons" />
               </div>
               <span className="text-center rounded px-0.5">{item.name}</span>
             </div>

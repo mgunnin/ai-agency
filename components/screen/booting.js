@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function BootingScreen(props) {
   return (
@@ -19,8 +19,8 @@ function BootingScreen(props) {
         width="400px"
         height="400px"
         className="md:w-1/4 w-1/2"
-        src="./themes/Yaru/status/cof_orange_hex.svg"
-        alt="Ubuntu Logo"
+        src="./icons/cof_orange_hex.svg"
+        alt="Orange Hex"
       />
       <div
         className="w-10 h-10 flex justify-center items-center rounded-full outline-none cursor-pointer"
@@ -32,7 +32,7 @@ function BootingScreen(props) {
               width="32px"
               height="32px"
               className="w-8"
-              src="./themes/Yaru/status/power-button.svg"
+              src="./icons/power-button.svg"
               alt="Power Button"
             />
           </div>
@@ -41,8 +41,8 @@ function BootingScreen(props) {
             width="40px"
             height="40px"
             className={" w-10 " + (props.visible ? " animate-spin " : "")}
-            src="./themes/Yaru/status/process-working-symbolic.svg"
-            alt="Ubuntu Process Symbol"
+            src="./icons/process-working-symbolic.svg"
+            alt="Process Symbol"
           />
         )}
       </div>
@@ -50,13 +50,13 @@ function BootingScreen(props) {
         width="200px"
         height="100px"
         className="md:w-1/5 w-1/2"
-        src="./themes/Yaru/status/ubuntu_white_hex.svg"
+        src="./icons/logos/ubuntu_white_hex.svg"
         alt="Ubuntu Name"
       />
       <div className="text-white mb-4">
         <a
           className="underline"
-          href="https://www.linkedin.com/in/aiden-mori-193b9325b/"
+          href="https://www.linkedin.com/in/matthewgunnin/"
           rel="noreferrer noopener"
           target="_blank"
         >
@@ -64,7 +64,7 @@ function BootingScreen(props) {
         </a>
         <span className="font-bold mx-1">|</span>
         <a
-          href="https://github.com/aiden77mori"
+          href="https://github.com/mgunnin"
           rel="noreferrer noopener"
           target="_blank"
           className="underline"
@@ -73,7 +73,7 @@ function BootingScreen(props) {
         </a>
       </div>
     </div>
-  );
+  )
 }
 
-export default BootingScreen;
+export default BootingScreen

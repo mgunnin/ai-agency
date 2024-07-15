@@ -6,7 +6,7 @@ import UbuntuApp from "../base/ubuntu"
 import Window from "../base/window"
 import DefaultMenu from "../context menus/default"
 import DesktopMenu from "../context menus/desktop"
-import BackgroundImage from "../util components/background"
+import BackgroundImage from "../util/background"
 import AllApplications from "./applications"
 import SideBar from "./sidebar"
 
