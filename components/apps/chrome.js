@@ -73,7 +73,7 @@ export class Chrome extends Component {
           <img
             className="w-5"
             src="./icons/chrome_refresh.svg"
-            alt="Ubuntu Chrome Refresh"
+            alt="Chrome Refresh"
           />
         </div>
         <div
@@ -83,7 +83,7 @@ export class Chrome extends Component {
           <img
             className="w-5"
             src="./icons/chrome_home.svg"
-            alt="Ubuntu Chrome Home"
+            alt="Chrome Home"
           />
         </div>
         <input
