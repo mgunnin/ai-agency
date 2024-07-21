@@ -1,7 +1,7 @@
 //import { displayTerminalCalc } from "./components/apps/calc"
+import { displayAbout } from "./components/apps/aboutus"
 import { displayChrome } from "./components/apps/chrome"
 import { displayContactUs } from "./components/apps/contact_us"
-import { displayAbout } from "./components/apps/main"
 import { displaySettings } from "./components/apps/settings"
 import displaySpotify from "./components/apps/spotify"
 import { displayTerminal } from "./components/apps/terminal"
