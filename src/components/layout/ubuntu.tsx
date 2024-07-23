@@ -1,9 +1,9 @@
 import { Component } from "react"
 import ReactGA from "react-ga4"
-import BootingScreen from "./screen/booting"
-import Desktop from "./screen/desktop"
-import LockScreen from "./screen/lockscreen"
-import Navbar from "./screen/navbar"
+import BootingScreen from "../screens/booting"
+import Desktop from "../screens/desktop"
+import LockScreen from "../screens/lockscreen"
+import Navbar from "../screens/navbar"
 
 interface UbuntuState {
   screen_locked: boolean;

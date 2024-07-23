@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SideBarApp from "../base/sidebar";
+import SideBarApp from "../common/sidebar";
 
 interface AppInfo {
   id: string;

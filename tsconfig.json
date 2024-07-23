@@ -20,20 +20,17 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@copilotkit/react-core/*": ["./node_modules/*"],
-      "@copilotkit/react-ui/*": ["../packages/react-ui/*"],
-      "@copilotkit/react-textarea/*": ["../packages/react-textarea/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": [
-    "types/next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "types/**/*.d.ts",
-    "components/util/status.js"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "types/**/*.d.ts"
   ],
   "exclude": ["node_modules"]
 }

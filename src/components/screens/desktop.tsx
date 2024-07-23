@@ -1,12 +1,12 @@
 import $ from "jquery";
 import React, { Component } from "react";
 import ReactGA from "react-ga4";
-import apps from "../../apps.config";
-import UbuntuApp from "../base/ubuntu";
-import Window from "../base/window";
-import DefaultMenu from "../context menus/default";
-import DesktopMenu from "../context menus/desktop";
-import BackgroundImage from "../util/background";
+import apps from "../../config/apps.config";
+import BackgroundImage from "../../utils/background";
+import UbuntuApp from "../common/ubuntuapp";
+import Window from "../common/window";
+import DefaultMenu from "../ui/menus/default";
+import DesktopMenu from "../ui/menus/desktop";
 import AllApplications from "./applications";
 import SideBar from "./sidebar";
 
@@ -234,16 +234,16 @@ export class Desktop extends Component<DesktopProps, DesktopState> {
     let appsJsx: JSX.Element[] = [];
     apps.forEach((app: { id: string; title: string; icon: string; disabled: boolean; favorite: boolean; desktop_shortcut: boolean; screen: React.FC | ((addFolder: (name: string) => void, openApp: (id: string) => void) => JSX.Element) }, index: number) => {
       if (this.state.desktop_apps.includes(app.id)) {
+        const { id, title, icon } = app;
         const props = {
-          key: index,
-          id: app.id,
-          title: app.title,
-          icon: app.icon,
-          name: app.title,
+          id,
+          title,
+          icon,
+          name: title,
           openApp: this.openApp,
         };
 
-        appsJsx.push(<UbuntuApp {...props} />);
+        appsJsx.push(<UbuntuApp key={index} {...props} />);
       }
     });
     return appsJsx;
@@ -253,16 +253,16 @@ export class Desktop extends Component<DesktopProps, DesktopState> {
     let windowsJsx: JSX.Element[] = [];
     apps.forEach((app: { id: string; title: string; icon: string; disabled: boolean; favorite: boolean; desktop_shortcut: boolean; screen: React.FC | ((addFolder: (name: string) => void, openApp: (id: string) => void) => JSX.Element) }, index: number) => {
       if (this.state.closed_windows[app.id] === false) {
+        const { id, title, screen } = app;
         const props = {
-          key: index,
-          id: app.id,
-          title: app.title,
-          screen: typeof app.screen === 'function' ? () => app.screen(this.addToDesktop, this.openApp) : app.screen,
+          id,
+          title,
+          screen: typeof screen === 'function' ? () => screen(this.addToDesktop, this.openApp) : screen,
           addFolder: this.addToDesktop,
           closed: this.closeApp,
           openApp: this.openApp,
           focus: this.focus,
-          isFocused: this.state.focused_windows[app.id],
+          isFocused: this.state.focused_windows[id],
           hideSideBar: (eventOrId: React.MouseEvent | null | string, hide: boolean) => {
             if (typeof eventOrId === 'string' || eventOrId === null) {
               this.hideSideBar(null, hide);
@@ -271,12 +271,12 @@ export class Desktop extends Component<DesktopProps, DesktopState> {
             }
           },
           hasMinimised: this.hasMinimised,
-          minimized: this.state.minimized_windows[app.id],
+          minimized: this.state.minimized_windows[id],
           changeBackgroundImage: this.props.changeBackgroundImage,
           bg_image_name: this.props.bg_image_name,
         };
 
-        windowsJsx.push(<Window {...props} />);
+        windowsJsx.push(<Window key={index} {...props} />);
       }
     });
     return windowsJsx;

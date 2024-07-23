@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Clock from "../util/clock";
+import Clock from "../../utils/clock";
 
 interface LockScreenProps {
   isLocked: boolean;

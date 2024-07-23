@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UbuntuApp from "../base/ubuntu";
+import UbuntuApp from "../common/ubuntuapp";
 
 interface AppInfo {
   id: string;

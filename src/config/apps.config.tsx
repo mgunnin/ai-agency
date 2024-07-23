@@ -1,16 +1,26 @@
 //import { displayTerminalCalc } from "./components/apps/calc"
-import { displayAbout } from "./components/apps/aboutus"
-import { displayChrome } from "./components/apps/chrome"
-import { displayContactUs } from "./components/apps/contact_us"
-import { displaySettings } from "./components/apps/settings"
-import displaySpotify from "./components/apps/spotify"
-import { displayTerminal } from "./components/apps/terminal"
-import { displayTrash } from "./components/apps/trash"
-import displayVsCode from "./components/apps/vscode"
+import { displayAbout } from "../components/apps/about_us"
+import { displayChrome } from "../components/apps/chrome"
+import { displayContactUs } from "../components/apps/contact_us"
+import { displaySettings } from "../components/apps/settings"
+import displaySpotify from "../components/apps/spotify"
+import { displayTerminal } from "../components/apps/terminal"
+import { displayTrash } from "../components/apps/trash"
+import displayVsCode from "../components/apps/vscode"
 
 //Add app for tools and prompts
 
-const apps = [
+interface App {
+  id: string;
+  title: string;
+  icon: string;
+  disabled: boolean;
+  favorite: boolean;
+  desktop_shortcut: boolean;
+  screen: React.FC<any> | (() => JSX.Element);
+}
+
+const apps: App[] = [
   {
     id: "about",
     title: "About",

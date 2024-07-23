@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import Clock from "../util/clock"
-import Status from "../util/status"
-import StatusCard from "../util/status_card"
+import { Component } from "react";
+import Clock from "../../utils/clock";
+import Status from "../../utils/status";
+import StatusCard from "../../utils/status_card";
 
 interface NavbarProps {
   shutDown: () => void;

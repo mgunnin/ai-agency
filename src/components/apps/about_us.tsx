@@ -1,11 +1,11 @@
 import React, { Component, FocusEvent } from "react";
 import ReactGA from "react-ga4";
-import About from "../screen/about";
-import Faq from "../screen/faq";
-import History from "../screen/history";
-import Projects from "../screen/projects";
-import Skills from "../screen/skills";
-import Team from "../screen/team";
+import About from "../screens/about";
+import Faq from "../screens/faq";
+import History from "../screens/history";
+import Projects from "../screens/projects";
+import Skills from "../screens/skills";
+import Team from "../screens/team";
 
 interface AboutUsProps { }
 
