@@ -418,7 +418,7 @@ export class Desktop extends Component<DesktopProps, DesktopState> {
       closed_windows: { ...prevState.closed_windows, [objId]: true },
       favorite_apps: {
         ...prevState.favorite_apps,
-        [objId]: this.initFavorite[objId] === true,
+        [objId]: this.initFavorite[objId] === true || objId === "contact-us" || objId === "trash",
       },
     }));
   };
